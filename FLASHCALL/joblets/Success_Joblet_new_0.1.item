@@ -3,11 +3,11 @@
     <context confirmationNeeded="false" hide="false" name="Default">
       <contextParameter comment="" internalId="_-vrBEBEJEe-xz7TU6frKUQ" name="ProcessTableName" prompt="ProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="batch_logs"/>
       <contextParameter comment="" internalId="_-vrBEREJEe-xz7TU6frKUQ" name="BatchProcessTableName" prompt="BatchProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="batch_process"/>
-      <contextParameter comment="" internalId="_-vrBEhEJEe-xz7TU6frKUQ" name="ProcessName" prompt="ProcessName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="landing_cdr_child_job"/>
-      <contextParameter comment="" internalId="_-vrBExEJEe-xz7TU6frKUQ" name="host" prompt="host?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="10.2.152.30"/>
+      <contextParameter comment="" internalId="_-vrBEhEJEe-xz7TU6frKUQ" name="ProcessName" prompt="ProcessName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="staging_sm_in_voice"/>
+      <contextParameter comment="" internalId="_-vrBExEJEe-xz7TU6frKUQ" name="host" prompt="host?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="localhost"/>
       <contextParameter comment="" internalId="_-vrBFBEJEe-xz7TU6frKUQ" name="username" prompt="username?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="postgres"/>
-      <contextParameter comment="" internalId="_-vrBFREJEe-xz7TU6frKUQ" name="database" prompt="database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="flashcall"/>
-      <contextParameter comment="" internalId="_-vrBFhEJEe-xz7TU6frKUQ" name="password" prompt="password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:TGgCh0371NdNdIwY/qqmjYgJoFdO08L1/MS4LpGSCUR1+OVt"/>
+      <contextParameter comment="" internalId="_-vrBFREJEe-xz7TU6frKUQ" name="database" prompt="database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="smart"/>
+      <contextParameter comment="" internalId="_-vrBFhEJEe-xz7TU6frKUQ" name="password" prompt="password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:xkB7e+tAPzQkBKQaBS9nWAFQg//bgKRcdZij6RYNUyEL0mZS"/>
       <contextParameter comment="" internalId="_-vrBFxEJEe-xz7TU6frKUQ" name="port" prompt="port?" promptNeeded="false" repositoryContextId="built-in" type="id_Integer" value="5432"/>
     </context>
     <parameters>
@@ -369,13 +369,13 @@
     </jobletNodes>
   </model:JobletProcess>
   <TalendProperties:ByteArray/>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_007e2f16-94e4-4070-a968-d209bbe9401a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>SZFvQ4oOVJtIA+b00lWKe8yAdn7BZU3GkGIWzVjDyz3UtGP4bStGY2T4M1LQJDUgeLT4LaWyqv89&#13;
-xXPyjEHYuw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_bc073ca6-871c-4dc9-8a56-687c66aaed19"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>7k7rl40XoEQYs14qnAElQ8+w6G3Ue6YL3dlHHP0mEa9B9eV5pW1c/Ox6GpMeWOsIriEon2hMULuh&#13;
-ToB8ZDgPTQ==</DigestValue></Reference></SignedInfo><SignatureValue>jKcxalufPATqMZxztV9ZBYFl1BmkKbJfBwpO7vVX5SBlgFRJUkroMyYdENL3U63FEhP5J6Ontv7R&#13;
-LGkzOjsd15mte8JLTuC2d9P+9H27/H+9/B3RHjhRXVSb+qcca11VFe9LImqaiPKU/iZovyYIH2yO&#13;
-I9lf7HLuyb2XFNA5yRaafM/H1a9L6k4+6cDF3LWPEOn7VVLpeL889M8FZKBVlHsMIdEn5lhVsAVi&#13;
-OfJUlykD/69PnMl7wedL2c7qOn6B1KpYGtCS5o10TlZNe0rDYmgdj4mv7VTRkXCyMe6H/4aiL8yg&#13;
-6b3VTs/K35g8gw4g3sx1dXJ8PMRJJtyNp/O0cg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_67578d70-4ea9-47b1-84f0-ad2f34744e6e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>z+UTiJXPnIKtl97l5wN+iReATNOr0HfdIMieqEP/p+6TCeDPDjlz/gDPA2KEwVWBDgBaaaSz4ExP&#13;
+EOGwBt/30Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_85400e93-428e-4155-a6cc-10fa19fe6c05"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>3PPH9IehmQWXGXxlLcNVX9Y0mA2mkUFPLn1VeSW/0QSnpBsC6dpzEtLz+ytfM57Eng3yhNSXw2KI&#13;
+mi9/HZ1KKw==</DigestValue></Reference></SignedInfo><SignatureValue>BfQ6HBvbip3vNWZZa7ZZaGUD6JwrQ9FqgunUVM+fTKXjC+ovfViAL569aWDZtLlqJfDlyOhiEyST&#13;
+fS8Hz5ERNJ5sHJvCqSjFrzU9ZyDnqPNtNCWTsKF9JQh8zQoSmfIQpOoVibpEWd3LXTw/Cxy+vZla&#13;
+0p+sXbcp4wlT6kcPk4EBpBxHzq21lT7vngsgamK5DtcoAtSaUHnsaJF6DURXH1eFScqRibrAiYgb&#13;
+K883l4LGHmxgJ7tsfUUf0KmxU173jxjL5zryAgP0Hsta6xcferULCsQ4Ufc8MjPn9M2VyhRfjuAU&#13;
+BJrsod64XFxPxZ6EuPiWy3r4ubvPVhUnjFlo3w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -397,4 +397,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_bc073ca6-871c-4dc9-8a56-687c66aaed19" Target="#_007e2f16-94e4-4070-a968-d209bbe9401a"><Timestamp>2024-05-14 10:37:51</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_85400e93-428e-4155-a6cc-10fa19fe6c05" Target="#_67578d70-4ea9-47b1-84f0-ad2f34744e6e"><Timestamp>2024-05-20 04:30:29</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>

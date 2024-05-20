@@ -12,6 +12,9 @@
     }, {
       "id" : "_sKYJ0g6sEe-yiN9BN_M3KA",
       "name" : "ProcessTableName"
+    }, {
+      "id" : "_DXTKABKrEe-TFe6mftq1rA",
+      "name" : "batch_id"
     } ]
   } ]
 }

@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
-  <context confirmationNeeded="false" name="Default">
-    <contextParameter comment="" internalId="_py9QgA0tEe-yiN9BN_M3KA" name="ProcessName" prompt="ProcessName?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9QgQ0tEe-yiN9BN_M3KA" name="StagingTablename" prompt="StagingTablename?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9Qgg0tEe-yiN9BN_M3KA" name="LandingTableName" prompt="LandingTableName?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9Qgw0tEe-yiN9BN_M3KA" name="PredecessorName" prompt="PredecessorName?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9QhA0tEe-yiN9BN_M3KA" name="UserName" prompt="UserName?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9QhQ0tEe-yiN9BN_M3KA" name="ProcessTableName" prompt="ProcessTableName?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9Qhg0tEe-yiN9BN_M3KA" name="BatchProcessTableName" prompt="BatchProcessTableName?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9Qhw0tEe-yiN9BN_M3KA" name="LogFolder" prompt="LogFolder?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9QiA0tEe-yiN9BN_M3KA" name="DB_Connection" prompt="DB_Connection?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9QiQ0tEe-yiN9BN_M3KA" name="BatchID" prompt="BatchID?" promptNeeded="false" type="id_Integer" value=""/>
+  <context confirmationNeeded="false" hide="false" name="Default">
+    <contextParameter comment="" internalId="_py9QgA0tEe-yiN9BN_M3KA" name="ProcessName" prompt="ProcessName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9QgQ0tEe-yiN9BN_M3KA" name="StagingTablename" prompt="StagingTablename?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9Qgg0tEe-yiN9BN_M3KA" name="LandingTableName" prompt="LandingTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9Qgw0tEe-yiN9BN_M3KA" name="PredecessorName" prompt="PredecessorName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9QhA0tEe-yiN9BN_M3KA" name="UserName" prompt="UserName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9QhQ0tEe-yiN9BN_M3KA" name="ProcessTableName" prompt="ProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9Qhg0tEe-yiN9BN_M3KA" name="BatchProcessTableName" prompt="BatchProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9Qhw0tEe-yiN9BN_M3KA" name="LogFolder" prompt="LogFolder?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9QiA0tEe-yiN9BN_M3KA" name="DB_Connection" prompt="DB_Connection?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9QiQ0tEe-yiN9BN_M3KA" name="BatchID" prompt="BatchID?" promptNeeded="false" repositoryContextId="built-in" type="id_Integer" value=""/>
   </context>
-  <context confirmationNeeded="false" name="Prod">
-    <contextParameter comment="" internalId="_py9Qig0tEe-yiN9BN_M3KA" name="ProcessName" prompt="ProcessName?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9Qiw0tEe-yiN9BN_M3KA" name="StagingTablename" prompt="StagingTablename?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9QjA0tEe-yiN9BN_M3KA" name="LandingTableName" prompt="LandingTableName?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9QjQ0tEe-yiN9BN_M3KA" name="PredecessorName" prompt="PredecessorName?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9Qjg0tEe-yiN9BN_M3KA" name="UserName" prompt="UserName?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9Qjw0tEe-yiN9BN_M3KA" name="ProcessTableName" prompt="ProcessTableName?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9QkA0tEe-yiN9BN_M3KA" name="BatchProcessTableName" prompt="BatchProcessTableName?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9QkQ0tEe-yiN9BN_M3KA" name="LogFolder" prompt="LogFolder?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9Qkg0tEe-yiN9BN_M3KA" name="DB_Connection" prompt="DB_Connection?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_py9Qkw0tEe-yiN9BN_M3KA" name="BatchID" prompt="BatchID?" promptNeeded="false" type="id_Integer" value=""/>
+  <context confirmationNeeded="false" hide="false" name="Prod">
+    <contextParameter comment="" internalId="_py9Qig0tEe-yiN9BN_M3KA" name="ProcessName" prompt="ProcessName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9Qiw0tEe-yiN9BN_M3KA" name="StagingTablename" prompt="StagingTablename?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9QjA0tEe-yiN9BN_M3KA" name="LandingTableName" prompt="LandingTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9QjQ0tEe-yiN9BN_M3KA" name="PredecessorName" prompt="PredecessorName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9Qjg0tEe-yiN9BN_M3KA" name="UserName" prompt="UserName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9Qjw0tEe-yiN9BN_M3KA" name="ProcessTableName" prompt="ProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9QkA0tEe-yiN9BN_M3KA" name="BatchProcessTableName" prompt="BatchProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9QkQ0tEe-yiN9BN_M3KA" name="LogFolder" prompt="LogFolder?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9Qkg0tEe-yiN9BN_M3KA" name="DB_Connection" prompt="DB_Connection?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_py9Qkw0tEe-yiN9BN_M3KA" name="BatchID" prompt="BatchID?" promptNeeded="false" repositoryContextId="built-in" type="id_Integer" value=""/>
   </context>
   <parameters>
+    <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
     <elementParameter field="TEXT" name="JOB_RUN_VM_ARGUMENTS" show="false" value="{&quot;JOB_RUN_VM_ARGUMENTS&quot;:[&quot;-Xms2056M&quot;,&quot;-Xmx8208M&quot;]}"/>
     <elementParameter field="CHECK" name="JOB_RUN_VM_ARGUMENTS_OPTION" show="false" value="true"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="288"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="352"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="384"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
@@ -52,6 +53,9 @@
     <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
     <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="OVERRIDE_ENCODING_FLAG" show="false" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="OVERRIDE_ENCODING_IN_EXTRA" show="false" value="ISO-8859-15"/>
+    <elementParameter field="TECHNICAL" name="OVERRIDE_ENCODING_IN_EXTRA:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
     <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" show="false" value=""/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" show="false" value=""/>
     <elementParameter field="TEXT" name="URL_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -64,7 +68,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:G3SJBF3kxND7MmSJTV3TPaj7EB2KT+bsiS5NkGSg"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:1Zj9b7WJfFOQeC7Dc7iUgreBAxi65rSJ5tk4FJWT"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -79,7 +83,7 @@
     <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
     <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" show="false" value="false"/>
     <elementParameter field="CHECK" name="ON_FILES_FLAG" show="false" value="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;C:/Program Files (x86)/Talend-Studio/studio/workspace/.metadata&quot;"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;E:/Talend-Studio-20231027_1100-V8.0.1/workspace/.metadata&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
@@ -99,7 +103,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:iV69NEQ9ilGyY/3j0U8DEzzrh+tQAz86ssmtdVSS"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:pJD2nGAu0XaUOt4ocfuZVi9rbBITSur2bEv2AnPJ"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -118,23 +122,8 @@
     <elementParameter field="TEXT" name="FOOTER_LIBRARY" show="false" value=""/>
     <elementParameter field="TEXT" name="FOOTER_CODE" show="false" value=""/>
     <elementParameter field="TEXT" name="FOOTER_IMPORT" show="false" value=""/>
-    <routinesParameter id="_cNqzIOWrEemzoo2Qn_0CFw" name="DQTechnical"/>
-    <routinesParameter id="_cMGs4OWrEemzoo2Qn_0CFw" name="DataMasking"/>
-    <routinesParameter id="_cOFp4OWrEemzoo2Qn_0CFw" name="DataOperation"/>
-    <routinesParameter id="_cNP8YOWrEemzoo2Qn_0CFw" name="DataQualityDependencies"/>
-    <routinesParameter id="_cNDvIOWrEemzoo2Qn_0CFw" name="DataQuality"/>
-    <routinesParameter id="_cNdXwOWrEemzoo2Qn_0CFw" name="DqStringHandling"/>
-    <routinesParameter id="_cOQB8OWrEemzoo2Qn_0CFw" name="Mathematical"/>
-    <routinesParameter id="_cOi84OWrEemzoo2Qn_0CFw" name="Numeric"/>
-    <routinesParameter id="_cOwYQOWrEemzoo2Qn_0CFw" name="Relational"/>
-    <routinesParameter id="_cN6DsOWrEemzoo2Qn_0CFw" name="SQLike"/>
-    <routinesParameter id="_cO8lgOWrEemzoo2Qn_0CFw" name="StringHandling"/>
-    <routinesParameter id="_cPKn8OWrEemzoo2Qn_0CFw" name="TalendDataGenerator"/>
-    <routinesParameter id="_cPXcQOWrEemzoo2Qn_0CFw" name="TalendDate"/>
-    <routinesParameter id="_cQbMMOWrEemzoo2Qn_0CFw" name="TalendStringUtil"/>
-    <routinesParameter id="_cPlesOWrEemzoo2Qn_0CFw" name="TalendString"/>
   </parameters>
-  <node componentName="tLogCatcher" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="608" posY="320">
+  <node componentName="tLogCatcher" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="640" posY="640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogCatcher_1"/>
     <elementParameter field="CHECK" name="CATCH_JAVA_EXCEPTION" value="true"/>
     <elementParameter field="CHECK" name="CATCH_TDIE" value="true"/>
@@ -157,7 +146,7 @@
       <column defaultValue="" key="false" length="3" name="code" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="320">
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="832" posY="640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_1"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
@@ -203,7 +192,7 @@
       <column defaultValue="" key="false" length="3" name="code" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="192">
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="608">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_3"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -226,7 +215,7 @@
       <column comment="" key="false" length="1" name="DATA_PROCESSED" nullable="true" pattern="" precision="-1" sourceType="" type="id_Character" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="192">
+  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="608">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_3"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
@@ -253,6 +242,8 @@
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="context.prod_db_conn_AdditionalParams"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
+    <elementParameter field="CHECK" name="USE_ALTERNATE_SCHEMA" value="false"/>
+    <elementParameter field="TEXT" name="ALTERNATE_SCHEMA" show="false" value="&quot;&quot;"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" show="false" value="1"/>
@@ -273,6 +264,7 @@
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="false"/>
+    <elementParameter field="CHECK" name="CONTAIN_BLOB_FROM_OTHER_DB" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" show="false" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" value="false"/>
@@ -280,6 +272,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="USE_TIMESTAMP_FOR_DATE_TYPE" value="true"/>
     <elementParameter field="CHECK" name="TRIM_CHAR" value="true"/>
+    <elementParameter field="CHECK" name="SUPPORT_NLS" show="false" value="false"/>
     <elementParameter field="TEXT" name="LABEL" value="Predessor Job Update"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row11"/>
     <metadata connector="FLOW" name="tDBOutput_3">
@@ -293,7 +286,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="64">
+  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
@@ -375,6 +368,7 @@
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="CHECK" name="NO_NULL_VALUES" value="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NLS" show="false" value="false"/>
     <elementParameter field="TEXT" name="LABEL" value="LandingData"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_1">
@@ -402,7 +396,7 @@
       <column comment="" defaultValue="" key="false" length="7" name="ACCOUNTING_CYCLE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFlowMeter" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="96" posY="64">
+  <node componentName="tFlowMeter" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="96" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowMeter_6"/>
     <elementParameter field="CHECK" name="USEROWLABEL" value="false"/>
     <elementParameter field="TEXT" name="METTERLABEL" value="&quot;LandingRecords&quot;"/>
@@ -436,7 +430,7 @@
       <column comment="" key="false" length="7" name="ACCOUNTING_CYCLE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NVARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tConvertType" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="256" posY="64">
+  <node componentName="tConvertType" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="256" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tConvertType_1"/>
     <elementParameter field="CHECK" name="AUTOCAST" value="true"/>
     <elementParameter field="TABLE" name="MANUALTABLE" show="false"/>
@@ -494,7 +488,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="416" posY="64">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="416" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -579,7 +573,7 @@
       <column comment="" key="false" length="-1" name="UPDATE_BATCH_ID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables activateCondensedTool="true" activateExpressionFilter="true" expressionFilter="main.REVENUE_EVENT != null" minimized="true" name="Deactivate_Rows" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="main.REVENUE_EVENT " name="REVENUE_EVENT" nullable="true" type="id_String"/>
@@ -676,7 +670,7 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="64">
+  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_2"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
@@ -703,6 +697,8 @@
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
+    <elementParameter field="CHECK" name="USE_ALTERNATE_SCHEMA" value="false"/>
+    <elementParameter field="TEXT" name="ALTERNATE_SCHEMA" show="false" value="&quot;&quot;"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" show="false" value="100000"/>
@@ -738,6 +734,7 @@
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="true"/>
+    <elementParameter field="CHECK" name="CONTAIN_BLOB_FROM_OTHER_DB" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" show="false" value="true"/>
     <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" value="true"/>
@@ -745,6 +742,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="USE_TIMESTAMP_FOR_DATE_TYPE" value="true"/>
     <elementParameter field="CHECK" name="TRIM_CHAR" value="true"/>
+    <elementParameter field="CHECK" name="SUPPORT_NLS" show="false" value="false"/>
     <elementParameter field="TEXT" name="LABEL" value="DeactivateRecords"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_2">
@@ -764,7 +762,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="160">
+  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_5"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
@@ -791,6 +789,8 @@
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
+    <elementParameter field="CHECK" name="USE_ALTERNATE_SCHEMA" value="false"/>
+    <elementParameter field="TEXT" name="ALTERNATE_SCHEMA" show="false" value="&quot;&quot;"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" show="false" value="40000"/>
@@ -952,6 +952,7 @@
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="true"/>
+    <elementParameter field="CHECK" name="CONTAIN_BLOB_FROM_OTHER_DB" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" show="false" value="true"/>
     <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" value="true"/>
@@ -959,6 +960,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="USE_TIMESTAMP_FOR_DATE_TYPE" value="true"/>
     <elementParameter field="CHECK" name="TRIM_CHAR" value="true"/>
+    <elementParameter field="CHECK" name="SUPPORT_NLS" show="false" value="false"/>
     <elementParameter field="TEXT" name="LABEL" value="UpdateRecords"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_5">
@@ -1026,7 +1028,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFlowMeter" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="64">
+  <node componentName="tFlowMeter" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowMeter_7"/>
     <elementParameter field="CHECK" name="USEROWLABEL" value="false"/>
     <elementParameter field="TEXT" name="METTERLABEL" value="&quot;DeactivatedRecords&quot;"/>
@@ -1043,7 +1045,7 @@
       <column comment="" key="false" length="-1" name="UPDATE_BATCH_ID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFlowMeter" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="160">
+  <node componentName="tFlowMeter" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowMeter_19"/>
     <elementParameter field="CHECK" name="USEROWLABEL" value="false"/>
     <elementParameter field="TEXT" name="METTERLABEL" value="&quot;UpdatedRecords&quot;"/>
@@ -1084,7 +1086,7 @@
       <column comment="" key="false" length="-1" name="UPDATE_BATCH_ID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="-32">
+  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
@@ -1111,6 +1113,8 @@
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
+    <elementParameter field="CHECK" name="USE_ALTERNATE_SCHEMA" value="false"/>
+    <elementParameter field="TEXT" name="ALTERNATE_SCHEMA" show="false" value="&quot;&quot;"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" show="false" value="10000"/>
@@ -1272,6 +1276,7 @@
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="true"/>
+    <elementParameter field="CHECK" name="CONTAIN_BLOB_FROM_OTHER_DB" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" show="false" value="true"/>
     <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" value="true"/>
@@ -1279,6 +1284,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="USE_TIMESTAMP_FOR_DATE_TYPE" value="true"/>
     <elementParameter field="CHECK" name="TRIM_CHAR" value="true"/>
+    <elementParameter field="CHECK" name="SUPPORT_NLS" show="false" value="false"/>
     <elementParameter field="TEXT" name="LABEL" value="NewRecords"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_1">
@@ -1346,7 +1352,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFlowMeter" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="-32">
+  <node componentName="tFlowMeter" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowMeter_16"/>
     <elementParameter field="CHECK" name="USEROWLABEL" value="false"/>
     <elementParameter field="TEXT" name="METTERLABEL" value="&quot;NewRecords&quot;"/>
@@ -1387,7 +1393,7 @@
       <column comment="" key="false" length="-1" name="UPDATE_BATCH_ID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFlowMeter" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="256" posY="192">
+  <node componentName="tFlowMeter" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="320" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowMeter_15"/>
     <elementParameter field="CHECK" name="USEROWLABEL" value="false"/>
     <elementParameter field="TEXT" name="METTERLABEL" value="&quot;RejectCount&quot;"/>
@@ -1423,7 +1429,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="192">
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="448" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_2"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
@@ -1481,7 +1487,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="96" posY="448">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="96" posY="896">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_3"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(&quot;\nLanding records: &quot; + (Integer)globalMap.get(&quot;tDBInput_1_NB_LINE&quot;));&#10;System.out.println(&quot;Staging Records - Rejects: &quot; + (Integer)globalMap.get(&quot;tFileOutputDelimited_2_NB_LINE&quot;));&#10;System.out.println(&quot;Staging Records - New: &quot; + (Integer)globalMap.get(&quot;tDBOutput_1_NB_LINE_INSERTED&quot;));&#10;System.out.println(&quot;Staging Records - Updated: &quot; + (Integer)globalMap.get(&quot;tDBOutput_5_NB_LINE_INSERTED&quot;));&#10;System.out.println(&quot;Staging Records - Deactivated: &quot; + (Integer)globalMap.get(&quot;tDBOutput_2_NB_LINE_UPDATED&quot;));"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -1489,7 +1495,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_3"/>
   </node>
-  <node componentName="tOracleRollback" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-192" posY="192">
+  <node componentName="tOracleRollback" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-224" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBRollback_1"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
     <elementParameter field="CHECK" name="CLOSE" value="false"/>
@@ -1497,7 +1503,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBRollback_1"/>
   </node>
-  <node componentName="tOracleConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-224" posY="-192">
+  <node componentName="tOracleConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-288" posY="-192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
     <elementParameter field="CLOSED_LIST" name="CONNECTION_TYPE" value="ORACLE_SID"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_18"/>
@@ -1531,10 +1537,11 @@
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:thin:USER/MDP@server&quot;"/>
     <elementParameter field="CHECK" name="AUTO_COMMIT" value="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NLS" value="false"/>
     <elementParameter field="TEXT" name="LABEL" value="DB Connect"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tOracleCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="448">
+  <node componentName="tOracleCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="896">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCommit_1"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
     <elementParameter field="CHECK" name="CLOSE" value="false"/>
@@ -1542,7 +1549,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBCommit_1"/>
   </node>
-  <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-192" posY="320">
+  <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-224" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_1"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;Staging child Job failed. Refer logs&quot;"/>
     <elementParameter field="TEXT" name="CODE" value="4"/>
@@ -1594,6 +1601,7 @@
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="CHECK" name="NO_NULL_VALUES" value="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NLS" show="false" value="false"/>
     <elementParameter field="TEXT" name="LABEL" value="Get Predecessor Status"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_2">
@@ -1612,7 +1620,7 @@
       <column comment="" key="false" length="1" name="DATA_PROCESSED" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="CHAR" type="id_Character" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="96" posY="-64">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="128" posY="0">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_1"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(&quot;Landing data not available for load. Please check status of job &quot; + context.PredecessorName + &quot; in &quot; + context.BatchProcessTableName + &quot; table. Job exiting&quot;);"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -1620,7 +1628,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_1"/>
   </node>
-  <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="-64">
+  <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="0">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_2"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;Landing data not available for Staging Load. Refer job status of &quot;+context.PredecessorName+&quot; in &quot;+context.BatchProcessTableName  +&quot; table&quot;"/>
     <elementParameter field="TEXT" name="CODE" value="8"/>
@@ -1630,7 +1638,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDie_2"/>
   </node>
-  <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-224" posY="-64">
+  <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-256" posY="0">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_3"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;Landing data not available for Staging Load. Refer job status of &quot;+context.PredecessorName+&quot; in &quot;+context.BatchProcessTableName  +&quot; table&quot;"/>
     <elementParameter field="TEXT" name="CODE" value="8"/>
@@ -1640,7 +1648,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDie_3"/>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="-64">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="0">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_2"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value=""/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -1648,7 +1656,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_2"/>
   </node>
-  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-224" posY="-320">
+  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-288" posY="-320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSetGlobalVar_1"/>
     <elementParameter field="TABLE" name="VARIABLES">
       <elementValue elementRef="KEY" value="&quot;ProcessFlag&quot;"/>
@@ -1657,7 +1665,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tSetGlobalVar_1"/>
   </node>
-  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="320">
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="736">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_1"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -1689,7 +1697,7 @@
       <column comment="" key="true" length="-1" name="BATCH_ID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="320">
+  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="736">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_4"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
@@ -1716,6 +1724,8 @@
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="context.prod_db_conn_AdditionalParams"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
+    <elementParameter field="CHECK" name="USE_ALTERNATE_SCHEMA" value="false"/>
+    <elementParameter field="TEXT" name="ALTERNATE_SCHEMA" show="false" value="&quot;&quot;"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" show="false" value="1"/>
@@ -1751,6 +1761,7 @@
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="false"/>
+    <elementParameter field="CHECK" name="CONTAIN_BLOB_FROM_OTHER_DB" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" show="false" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" value="false"/>
@@ -1758,6 +1769,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="USE_TIMESTAMP_FOR_DATE_TYPE" value="true"/>
     <elementParameter field="CHECK" name="TRIM_CHAR" value="true"/>
+    <elementParameter field="CHECK" name="SUPPORT_NLS" show="false" value="false"/>
     <elementParameter field="TEXT" name="LABEL" value="Update Log"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_4">
@@ -1777,7 +1789,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="320">
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="448" posY="640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;Invalid data in the Landing table. Refer reject file&quot;"/>
     <elementParameter field="TEXT" name="CODE" value="40"/>
@@ -1793,7 +1805,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row11"/>
   </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_3" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_3" target="tFixedFlowInput_1">
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_3" offsetLabelX="7" offsetLabelY="-12" source="tFixedFlowInput_3" target="tFixedFlowInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk3"/>
   </connection>
   <connection connectorName="FLOW" label="Landing" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tFlowMeter_6">
@@ -2692,10 +2704,10 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row"/>
   </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tDBCommit_1">
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_1" offsetLabelX="2" offsetLabelY="-13" source="tFixedFlowInput_1" target="tDBCommit_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk12"/>
   </connection>
-  <note opaque="false" posX="-128" posY="-320" sizeHeight="97" sizeWidth="353" text="The job does the below&#13;&#10;1. read from landing tables and write to the staging tables&#13;&#10;3. The count of records read/written are printed to console&#13;&#10;4. Update the process log after successful execution">
+  <note opaque="false" posX="960" posY="-352" sizeHeight="161" sizeWidth="449" text="The job does the below&#13;&#10;1. read from landing tables and write to the staging tables&#13;&#10;3. The count of records read/written are printed to console&#13;&#10;4. Update the process log after successful execution">
     <elementParameter field="RADIO" name="NOTETXT_LEFT" value="true"/>
     <elementParameter field="RADIO" name="NOTETXT_CENTER" value="false"/>
     <elementParameter field="TEXT" name="NOTE_FONT" value="Calibri"/>
@@ -2780,13 +2792,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d1f0e99f-5320-4efb-831f-a4dbb0628ce4"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>xKtJTM2tY26zPlOrIxEjgcPMUDWDROefi+YlA1PZDwncrPw0ibQbbSuEHslEEmpO8kMhfXFGrBJC&#13;
-jPTEHYlCPA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_27c82c35-a1b6-4dd0-9c49-58984a6037b6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ikVOSgH3/JORjBnwdYUwT9XCgsZyjP586kHLTrMaldhcuOxq06+b9pj4UDYiu0yKioc8xgc7zTJd&#13;
-v1oHaTHSGQ==</DigestValue></Reference></SignedInfo><SignatureValue>YMyzw8E+AXJZpcua+ys4TvPOGxwNA0OyirlOiomGOK6OO7QdvlyDp8bZzPBGyp6RgszQr4W2lzPJ&#13;
-gT7Q1avAa3yRT7L8c/yFCOTTASPdudX448jh4VhGGA6uP6yuF32BU12pBdNBMkBzHo1H3kk1cmbp&#13;
-W0i4rDOYvYAS/lrtmaKstMhSsaDH4O9YU27T7v4xmTHLGrGs4SHhvEo/c72RTl6OFkemlIDp3qdG&#13;
-QUZ64glMUKVbgOs1OxNlGtX8posT/hKclrG89X+VT1K8vqi1Y3JFZ2vuHbvWztXf8H6yB2AWZ5O8&#13;
-yMhBv1bLX6G0VjPUuArbFkbR8pk9kAEzf06yRg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1d4218df-a7d4-4919-b4b5-a0d294c7ab87"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ENLJ8tNvLFL7SG1MNDLVSq0YrKZXRZcq2vhfY4/hcgN4jj+eRac8nda1U2qFza7NzxqMHZ5aPP1L&#13;
+E+VMYaMagA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_67aad833-f749-45cc-9f2d-2aac9ea3c46f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>JSp9M++GXlNqw/sPk/p/YaFiH7w0qKkDpQqfIlMww5M+GappzyrVAzUO89t1nIHZxoopLDvP1kZ3&#13;
+nsXq4lZZwA==</DigestValue></Reference></SignedInfo><SignatureValue>k1RFIViFpm1mLLVeeEvNJejGOzdC2/FtODYV5FQwV+tvhMUbxcZgf6y+PtAzH5XLMlGpQma1Ok8V&#13;
+muBDgpxEL8r3XhjzvBZLrhej5ZuI/5UHgzx1e9Qm5GY/qlbswB3YI8fywpGPYOovGvWsJFDIWgn7&#13;
+fzOZ2DiMCe83tjN8FGBM82p1niI4Jtcb94rvhu5kCezmFrHfGxLE7qTcimyaNkZLbrMTQbK1WqvA&#13;
+Llp6mqwO1mATEP/TY/R+9QW/y41guDectJ1F8kZAD9PqggeoweVVAA5UT3tilSG/4FJT2tL0t3Br&#13;
+MRWezZRGFevL3cPTKEoM9Kow2IebNO1CZKshhQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2808,4 +2820,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_27c82c35-a1b6-4dd0-9c49-58984a6037b6" Target="#_d1f0e99f-5320-4efb-831f-a4dbb0628ce4"><Timestamp>2024-05-10 13:53:42</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_67aad833-f749-45cc-9f2d-2aac9ea3c46f" Target="#_1d4218df-a7d4-4919-b4b5-a0d294c7ab87"><Timestamp>2024-05-15 06:15:59</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

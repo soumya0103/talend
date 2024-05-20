@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties" xmlns:model="http://www.talend.com/joblet.ecore" xmi:version="2.0">
   <model:JobletProcess defaultContext="Prod" jobType="Standard">
-    <context confirmationNeeded="false" name="Default"/>
-    <context confirmationNeeded="false" name="Prod"/>
+    <context confirmationNeeded="false" hide="false" name="Default">
+      <contextParameter comment="" internalId="_dT9yQBKpEe-TFe6mftq1rA" name="batch_id" prompt="batch_id?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    </context>
+    <context confirmationNeeded="false" hide="false" name="Prod">
+      <contextParameter comment="" internalId="_dT9yQRKpEe-TFe6mftq1rA" name="batch_id" prompt="batch_id?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    </context>
     <parameters>
+      <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
       <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
       <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
       <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
@@ -31,6 +36,9 @@
       <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
       <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" show="false" value="&quot;C:/TalendEnterprise/studio/workspace/in.csv&quot;"/>
       <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;;&quot;"/>
+      <elementParameter field="CHECK" name="OVERRIDE_ENCODING_FLAG" show="false" value="false"/>
+      <elementParameter field="ENCODING_TYPE" name="OVERRIDE_ENCODING_IN_EXTRA" show="false" value="ISO-8859-15"/>
+      <elementParameter field="TECHNICAL" name="OVERRIDE_ENCODING_IN_EXTRA:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
       <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" show="false" value=""/>
       <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" show="false" value="ORACLE_12"/>
       <elementParameter field="TEXT" name="URL_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -63,21 +71,6 @@
       <elementParameter field="TEXT" name="FOOTER_LIBRARY" show="false" value=""/>
       <elementParameter field="TEXT" name="FOOTER_CODE" show="false" value=""/>
       <elementParameter field="TEXT" name="FOOTER_IMPORT" show="false" value=""/>
-      <routinesParameter id="_70DEgP-VEemNMNhmWONPiA" name="DQTechnical"/>
-      <routinesParameter id="_7yCSUP-VEemNMNhmWONPiA" name="DataMasking"/>
-      <routinesParameter id="_70lQAP-VEemNMNhmWONPiA" name="DataOperation"/>
-      <routinesParameter id="_7zbZcP-VEemNMNhmWONPiA" name="DataQualityDependencies"/>
-      <routinesParameter id="_7zHQYP-VEemNMNhmWONPiA" name="DataQuality"/>
-      <routinesParameter id="_7zxXsP-VEemNMNhmWONPiA" name="DqStringHandling"/>
-      <routinesParameter id="_701usP-VEemNMNhmWONPiA" name="Mathematical"/>
-      <routinesParameter id="_71EYMP-VEemNMNhmWONPiA" name="Numeric"/>
-      <routinesParameter id="_71UP0P-VEemNMNhmWONPiA" name="Relational"/>
-      <routinesParameter id="_70UKQP-VEemNMNhmWONPiA" name="SQLike"/>
-      <routinesParameter id="_71kugP-VEemNMNhmWONPiA" name="StringHandling"/>
-      <routinesParameter id="_719wEP-VEemNMNhmWONPiA" name="TalendDataGenerator"/>
-      <routinesParameter id="_72LLcP-VEemNMNhmWONPiA" name="TalendDate"/>
-      <routinesParameter id="_73c90P-VEemNMNhmWONPiA" name="TalendStringUtil"/>
-      <routinesParameter id="_72Z08P-VEemNMNhmWONPiA" name="TalendString"/>
     </parameters>
     <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="288">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_1"/>
@@ -144,6 +137,8 @@
       <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
       <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;noDatetimeStringSync=true&quot;"/>
       <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
+      <elementParameter field="CHECK" name="USE_ALTERNATE_SCHEMA" value="false"/>
+      <elementParameter field="TEXT" name="ALTERNATE_SCHEMA" show="false" value="&quot;&quot;"/>
       <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
       <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
       <elementParameter field="TEXT" name="COMMIT_EVERY" show="false" value="10000"/>
@@ -195,6 +190,7 @@
       <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
       <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
       <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="false"/>
+      <elementParameter field="CHECK" name="CONTAIN_BLOB_FROM_OTHER_DB" value="false"/>
       <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
       <elementParameter field="CHECK" name="USE_BATCH_SIZE" show="false" value="true"/>
       <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" value="false"/>
@@ -202,6 +198,7 @@
       <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
       <elementParameter field="CHECK" name="USE_TIMESTAMP_FOR_DATE_TYPE" value="true"/>
       <elementParameter field="CHECK" name="TRIM_CHAR" value="true"/>
+      <elementParameter field="CHECK" name="SUPPORT_NLS" show="false" value="false"/>
       <elementParameter field="TEXT" name="LABEL" value="Create Log Entry"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tDBOutput_1">
@@ -273,6 +270,7 @@
         <elementValue elementRef="TRIM" value="false"/>
       </elementParameter>
       <elementParameter field="CHECK" name="NO_NULL_VALUES" value="false"/>
+      <elementParameter field="CHECK" name="SUPPORT_NLS" show="false" value="false"/>
       <elementParameter field="TEXT" name="LABEL" value="Get BatchID"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tDBInput_1">
@@ -281,7 +279,7 @@
     </node>
     <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="224" posY="416">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_1"/>
-      <elementParameter field="MEMO_JAVA" name="CODE" value="globalMap.put(&quot;BatchID&quot;, (Integer)input_row.BATCH_ID);&#10;System.out.println(&quot;BatchID: &quot; + globalMap.get(&quot;BatchID&quot;));&#10;&#10;&#10;&#10;&#10;"/>
+      <elementParameter field="MEMO_JAVA" name="CODE" value="globalMap.put(&quot;BatchID&quot;, (Integer)input_row.BATCH_ID);&#10;System.out.println(&quot;BatchID: &quot; + globalMap.get(&quot;BatchID&quot;));&#10;&#10;&#10;&#10;&#10;&#10;&#10;"/>
       <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
       <elementParameter field="TEXT" name="LABEL" value="Set BatchID"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -309,7 +307,7 @@
         <elementValue elementRef="SCHEMA_COLUMN" value="PROCESS_NAME"/>
         <elementValue elementRef="VALUE" value="context.ProcessName"/>
         <elementValue elementRef="SCHEMA_COLUMN" value="START_TIME"/>
-        <elementValue elementRef="VALUE" value="TalendDate.getCurrentDate() "/>
+        <elementValue elementRef="VALUE" value="TalendDate.getCurrentDate()"/>
         <elementValue elementRef="SCHEMA_COLUMN" value="JOB_STATUS"/>
         <elementValue elementRef="VALUE" value="'R'"/>
       </elementParameter>
@@ -355,6 +353,8 @@
       <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
       <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;noDatetimeStringSync=true&quot;"/>
       <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
+      <elementParameter field="CHECK" name="USE_ALTERNATE_SCHEMA" value="false"/>
+      <elementParameter field="TEXT" name="ALTERNATE_SCHEMA" show="false" value="&quot;&quot;"/>
       <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
       <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
       <elementParameter field="TEXT" name="COMMIT_EVERY" show="false" value="10000"/>
@@ -385,6 +385,7 @@
       <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
       <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
       <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="false"/>
+      <elementParameter field="CHECK" name="CONTAIN_BLOB_FROM_OTHER_DB" value="false"/>
       <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
       <elementParameter field="CHECK" name="USE_BATCH_SIZE" show="false" value="true"/>
       <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" value="false"/>
@@ -392,6 +393,7 @@
       <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
       <elementParameter field="CHECK" name="USE_TIMESTAMP_FOR_DATE_TYPE" value="true"/>
       <elementParameter field="CHECK" name="TRIM_CHAR" value="true"/>
+      <elementParameter field="CHECK" name="SUPPORT_NLS" show="false" value="false"/>
       <elementParameter field="TEXT" name="LABEL" value="Update BatchProcess"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tDBOutput_2">
@@ -451,6 +453,7 @@
         <elementValue elementRef="TRIM" value="true"/>
       </elementParameter>
       <elementParameter field="CHECK" name="NO_NULL_VALUES" value="false"/>
+      <elementParameter field="CHECK" name="SUPPORT_NLS" show="false" value="false"/>
       <elementParameter field="TEXT" name="LABEL" value="Check Dependencies"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tDBInput_2">
@@ -612,13 +615,13 @@
     </jobletNodes>
   </model:JobletProcess>
   <TalendProperties:ByteArray/>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f119b6e3-30f7-4bb5-a892-ec13ed9553a2"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>YRBEtTMbqkrQfMakSi+I4SulLu05LiayY6rXU6uV8Oiydy8fHyKSaI1xEIEYs3PldbXCy9izL4Ql&#13;
-yxnBfeyLoA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_1d836e8e-a476-4785-b549-822d920920d8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4+PbHp/+NOGon9kDe5b/FgtvV8GlXew2KZiPrGKnMK5zzqNgk+jqwquxGb4B53lNAGv0czCZ9QoG&#13;
-ZdEPp5XwBQ==</DigestValue></Reference></SignedInfo><SignatureValue>UT4MEnqFI2dvTCDNS7W7ALnVSm1iYRFPcBLTr9H4rodvAgk/SsYZDoI6rp4wIC7PAR/U8MMxDsIO&#13;
-OVnqcfNgbskpXhkOwJSydBXsyRmTGRNF5bCHSkQ3Usz8uO5i0uEUzHa43rVFL3DUIl9Js9gkGImm&#13;
-Bi0++iFhvE1bMSMqgiahvOmdhGdlcKd5svJoYPrEELt2Yr1B5i2/ESDuqOQFSkTUAZD2L5qhLjx1&#13;
-QT73V9Pn9xz7pAODfjq64CvwMbCqsqnYiawaJdZOC8iCe9QCNhse33hQgEHmNIDyBSqH8vLbztyd&#13;
-dYG6OZXadWfcG3dqqpdVfOZfH4ZgQPMvqgtEqw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_21ce6c97-24ac-4ccb-b1af-63028bdf7c1c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>FZlz7/6iXi04OmkEJt5PyWZNGVYorPBIi9MJWTFrryCFaAF++ya0BTL5DzUugZ/n9kYpx8fmp35l&#13;
+BSaakCgjYg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a8020342-cb05-4887-8f3d-2678750fa2fa"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>96s0UxI/uTmBz6UYUzYAz1kxyE3HchEzRr5aCNSVIOlDZP35eXcUy0KC1jI4TQvmN9G00ZPFDoCY&#13;
+k3uLnv1aEA==</DigestValue></Reference></SignedInfo><SignatureValue>GJ6+DZpuml3IClMu0vklqxhHBDdXEH7eKnEY1f4GHrSDmJI/JEhVlFCmF42hoca8kVnr4BD46hYh&#13;
+5wYKy7A+v7UHUyjccyjDXA1B13id1QmKX+hJS5jeh435t8TOKzz4+MMyp38VgywPRFzGU6YhkP7e&#13;
+s1UUl4BiGJ2tswRF+kwz2kZxAOydct2aLGUH+f47+zOxlu6yskCHqVW9uUss/EtLnM6PDsTAAJdu&#13;
+BSPxQwmksC4LtJq94lHf0slsavDN1KecRBjOJKQXYTYVxJGIC/J9dPQiu2/8MNKx6MvjcfTnYeEo&#13;
+7a84EVJymB6LpKsgh/OO24d8XBiVDTvocF/OZw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -640,4 +643,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_1d836e8e-a476-4785-b549-822d920920d8" Target="#_f119b6e3-30f7-4bb5-a892-ec13ed9553a2"><Timestamp>2024-05-08 11:25:19</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a8020342-cb05-4887-8f3d-2678750fa2fa" Target="#_21ce6c97-24ac-4ccb-b1af-63028bdf7c1c"><Timestamp>2024-05-15 10:56:02</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
