@@ -88,30 +88,6 @@
     "id" : "built-in",
     "version" : "Latest",
     "type" : "context"
-  }, {
-    "id" : "_tDeIIBUGEe-appmVroDEzg - date_dim",
-    "version" : "Latest",
-    "type" : "schema"
-  }, {
-    "id" : "_tDeIIBUGEe-appmVroDEzg - dim_roam_state",
-    "version" : "Latest",
-    "type" : "schema"
-  }, {
-    "id" : "_tDeIIBUGEe-appmVroDEzg - dim_service_flow",
-    "version" : "Latest",
-    "type" : "schema"
-  }, {
-    "id" : "_tDeIIBUGEe-appmVroDEzg - dim_usage_service_type",
-    "version" : "Latest",
-    "type" : "schema"
-  }, {
-    "id" : "_tDeIIBUGEe-appmVroDEzg - service_category",
-    "version" : "Latest",
-    "type" : "schema"
-  }, {
-    "id" : "_tDeIIBUGEe-appmVroDEzg - service_unit_type",
-    "version" : "Latest",
-    "type" : "schema"
   } ]
 }, {
   "baseItem" : {
@@ -120,6 +96,14 @@
     "type" : "job"
   },
   "relatedItems" : [ {
+    "id" : "_9ogsABQ7Ee-71udyoAn91w",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
+    "id" : "built-in",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
     "id" : "FLASHCALL:_E4MecBQ_Ee-71udyoAn91w",
     "version" : "Latest",
     "type" : "job"

@@ -8,7 +8,7 @@
       <contextParameter comment="" internalId="_POpFIBHfEe-xz7TU6frKUQ" name="password" prompt="password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:N7pbQiEhZU3/zK6S3YFdTFOXoB47YQjZu+zbQyBZ6Dd6mxhq"/>
       <contextParameter comment="" internalId="_POpFIRHfEe-xz7TU6frKUQ" name="ProcessTableName" prompt="ProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="batch_logs"/>
       <contextParameter comment="" internalId="_POpFIhHfEe-xz7TU6frKUQ" name="BatchProcessTableName" prompt="BatchProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="batch_process"/>
-      <contextParameter comment="" internalId="_POpFIxHfEe-xz7TU6frKUQ" name="ProcessName" prompt="ProcessName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="staging_sm_in_voice"/>
+      <contextParameter comment="" internalId="_POpFIxHfEe-xz7TU6frKUQ" name="ProcessName" prompt="ProcessName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="fact_sm_in_voice"/>
     </context>
     <parameters>
       <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
@@ -96,6 +96,7 @@
       <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
       <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;;&quot;"/>
       <elementParameter field="MEMO" name="INLINECONTENT" show="false" value=""/>
+      <elementParameter field="TEXT" name="LABEL" value="process_log"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tFixedFlowInput_3">
         <column comment="" key="true" length="-1" name="BATCH_ID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
@@ -200,6 +201,7 @@
       <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
       <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;;&quot;"/>
       <elementParameter field="MEMO" name="INLINECONTENT" show="false" value=""/>
+      <elementParameter field="TEXT" name="LABEL" value="batch_process"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tFixedFlowInput_4">
         <column comment="" key="true" length="100" name="process_name" nullable="true" originalLength="100" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -371,13 +373,13 @@
     </jobletNodes>
   </model:JobletProcess>
   <TalendProperties:ByteArray/>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_04d275bc-7133-41e3-a6e7-97ba7231ff84"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Cxf0tlqitUqU5xZ4hfl60OtkWKhtiC+WXduhPMVi8t367w6ijJ38Syo5LGQ2ZNoG0GaCeevHeLYT&#13;
-A1uT3R762g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0bc6dcbc-b5fa-4a0a-847e-68662917215d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>BhDVJ+YXWBGpLfZ/KX7EkrAhbKV4s08mkDYnGeDJp5nlcN7wpkgRTkH4p8on4SIxIiiNsV4M55V8&#13;
-Mwa3aB9NvA==</DigestValue></Reference></SignedInfo><SignatureValue>lFJI/7PQCOesmLDnn3695NJ3Jn9kjYD6+gysPuWuQ5eQPDoMwN7jyHLDNF8FhQd6gtje3jHkSUU0&#13;
-srI6KH0GB4k5Rj7wld7K9KWF13qnCBNI/YwP+TK3Y8Le2Ugmb3HQPe88dQRtnIPlD87TwszZhxJS&#13;
-ezwRn58PPJrkZpNIxMUFXJpJgDjm5rDogfDh6Yz9ZLt9Z9Nsl7WWLziyxOoNWoceN8IQirQ+YbN5&#13;
-WaS8GCQaDjAx+eUxO+zmXaLTvaMWd2+zpFmuYGwr+0GCwMmHHIOnuH9BLsUlBNiCpAZe50KHEgms&#13;
-2so3/pjGC0DLQlblsYwWE98mrOHJPzYdm8k/wQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_8436f846-f281-4496-b19e-06e36d22bdbf"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>KP7tFBCwi8WBOgYV6XYaIqUJcwGSbne40eh/TcfkRfOoB0LwnJIOMX+ghpV8VnjWDx29YqYpS90k&#13;
+3vUhcaqBYg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a838cb32-af04-44b9-8c83-3cbf58a41cf4"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>lb0b8v9gdWdflkUahkULWM+ay1AmA6fE4waZocHa/vDameZMqsU4BCw9rfgAPmLugOpx7eCkV8HJ&#13;
+boSGfJVIjQ==</DigestValue></Reference></SignedInfo><SignatureValue>DB9Ws2Dicn8G9/ZVoiGlMuQVqJ1RlCDwFfUiK8eb5+pslwjDw0wLmZTBG/4MA25RcB6H460tfran&#13;
+jKNeYcqypFGX7KRhdzOAXlUkGvLxaEJfdih+1rFeeuJvKYtni+UKYanP5ucE5EOTNlh3dHrclgOG&#13;
+GLIzSUUttI0df17P8Uxur0crE66Ba59upiMXlq/rOlv/dbWwPD29eoVRIDgymc5EQ1lzQac9AZld&#13;
+YPuup61jcgq+r3uMPFYItRJ80+WoP0s85aKcl9JlxHLuhKVLQ0S9YvLATklpn+Wp1NX3JpgB6u1o&#13;
+rouSW9YHzH4B3VxtsvqSRl846DMPdF8TN36O4g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -399,4 +401,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0bc6dcbc-b5fa-4a0a-847e-68662917215d" Target="#_04d275bc-7133-41e3-a6e7-97ba7231ff84"><Timestamp>2024-05-20 06:30:10</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a838cb32-af04-44b9-8c83-3cbf58a41cf4" Target="#_8436f846-f281-4496-b19e-06e36d22bdbf"><Timestamp>2024-05-21 12:33:39</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>

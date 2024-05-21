@@ -2,7 +2,7 @@
   <model:JobletProcess defaultContext="Prod" jobType="Standard">
     <context confirmationNeeded="false" hide="false" name="Default">
       <contextParameter comment="" internalId="_sKYJ0A6sEe-yiN9BN_M3KA" name="BatchProcessTableName" prompt="BatchProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="batch_process"/>
-      <contextParameter comment="" internalId="_sKYJ0Q6sEe-yiN9BN_M3KA" name="ProcessName" prompt="ProcessName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="staging_sm_in_voice"/>
+      <contextParameter comment="" internalId="_sKYJ0Q6sEe-yiN9BN_M3KA" name="ProcessName" prompt="ProcessName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="fact_sm_in_voice"/>
       <contextParameter comment="" internalId="_sKYJ0g6sEe-yiN9BN_M3KA" name="ProcessTableName" prompt="ProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="batch_logs"/>
       <contextParameter comment="" internalId="_sKYJ0w6sEe-yiN9BN_M3KA" name="database" prompt="database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="smart"/>
       <contextParameter comment="" internalId="_sKYJ1A6sEe-yiN9BN_M3KA" name="port" prompt="port?" promptNeeded="false" repositoryContextId="built-in" type="id_Integer" value="5432"/>
@@ -122,6 +122,7 @@
         <elementValue elementRef="SCHEMA_COLUMN" value="DATA_PROCESSED"/>
         <elementValue elementRef="TRIM" value="false"/>
       </elementParameter>
+      <elementParameter field="TEXT" name="LABEL" value="Check dependencies"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tDBInput_3">
         <column comment="" key="false" length="1" name="JOB_STATUS" nullable="true" originalLength="100" pattern="" precision="-1" sourceType="CHAR" type="id_Character" usefulColumn="true"/>
@@ -180,6 +181,7 @@
       <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
       <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;;&quot;"/>
       <elementParameter field="MEMO" name="INLINECONTENT" show="false" value=""/>
+      <elementParameter field="TEXT" name="LABEL" value="Process log"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tFixedFlowInput_4">
         <column comment="" key="true" length="100" name="JOB_NAME" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -319,6 +321,7 @@
         <elementValue elementRef="SCHEMA_COLUMN" value="BATCH_ID"/>
         <elementValue elementRef="TRIM" value="false"/>
       </elementParameter>
+      <elementParameter field="TEXT" name="LABEL" value="get batch id"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tDBInput_4">
         <column comment="" key="false" length="-1" name="BATCH_ID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
@@ -354,6 +357,7 @@
       <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
       <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;;&quot;"/>
       <elementParameter field="MEMO" name="INLINECONTENT" show="false" value=""/>
+      <elementParameter field="TEXT" name="LABEL" value="process log"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tFixedFlowInput_6">
         <column comment="" key="false" length="1" name="data_processed" nullable="true" originalLength="1" pattern="" precision="-1" sourceType="" type="id_Character" usefulColumn="true"/>
@@ -567,13 +571,13 @@
     </jobletNodes>
   </model:JobletProcess>
   <TalendProperties:ByteArray/>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c453b9d5-ceca-4494-b46b-503a128890ef"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>32Fl8uIkCC2qv2nvSccguaeqWXF2KQ9ecCd8DatB+77E+2mXwM4+V11ybiiu4ECcGePWhchcWKrh&#13;
-qWaxLTxTtg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3d366e8c-15be-4c4a-a06b-884bb001bf65"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>P1rlUN6gITLSSfFI/OtMJym/ut0nzIjDYno0tpzgNIzw37J/7HyYXrNxV/h2ixAbeDWzP/3a1yHH&#13;
-GFyn5sAsTA==</DigestValue></Reference></SignedInfo><SignatureValue>IYAjv1TGJaNJS8hHI7SQ4V+f4JxSz2mfTJIomFA6/8WRtiTEAK3bKMSSddUG7/IWjNarzZ7oSwN7&#13;
-C5fCNXu8a6ZVZxEBxrg2b6cSjBA8j81HcD5lZbawXPbA8juxTHhvfrtm80lKCVTAow2ORsu63DAY&#13;
-hYTkSR8xTa9Nb6/1HWdMOAlFZfpERV55kUT7s4GL5L0sYUy4cobq1bON/WukuGcKJRTz1Bu1GrFC&#13;
-UOPU+mIAlm4SDpJcIYS29gJXumEIJm++InI6u62NFFw1hDQoin1CF09velsP+uXV0dqJ5nlCmxU3&#13;
-I9CysXreP6qdxHzezZBNnDQr1WMnJ7SBov7a8g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_28271ba0-2bd2-43a2-9142-073dd5b53ffd"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>hiQcTe77/dJHObTBLLdEd9gzTCvCT/PNyuwdQ0Dvg3G9jOYUWmynTPDpRh9RcyyEZFLP7Ufu4HQL&#13;
+ru3XfC6bwg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ce6e219a-76f6-4c8e-8c43-247d520dd361"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ELi9Y1WpbcY3H7lves5Rn5OT5IjN9NVWDJ+ERuH9DQ7bsOWMRBU52jwi99AOvRUafhVsCzcV4gcE&#13;
+IfesiewiLA==</DigestValue></Reference></SignedInfo><SignatureValue>n+JhZzcEyjJvm1o0qeAGyp8cZSlKMfSpTrTB0RMOLvLqT5SSS/ghYJZgtGw1CvabIUCGyxJBArgy&#13;
+r2FKpEBWlqtvEj7OZ/vS25hJCjYcukpjgWK2eGS71xyU34yVk5AP3XFoglGAqGZz0JZ5PH9W9npC&#13;
+zzXSghO0gLqPz04FxtGvevpu6AwpxgBlNQzQvLOhyHyyYKOwBue6LuKKrr3+8mwc4cOTGjmNt3sV&#13;
+yZ7Sz9iNf0WQuyHOI1H66iunWeFvwmSWhH7Q/8mf9f2N9aDXYg1x+VEipviI0b4yUNigWVeNZ6Oy&#13;
+UTCDukKp6THP5P4f4mE5zPTdKVvREVJQ8WTyBQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -595,4 +599,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3d366e8c-15be-4c4a-a06b-884bb001bf65" Target="#_c453b9d5-ceca-4494-b46b-503a128890ef"><Timestamp>2024-05-20 06:39:14</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ce6e219a-76f6-4c8e-8c43-247d520dd361" Target="#_28271ba0-2bd2-43a2-9142-073dd5b53ffd"><Timestamp>2024-05-21 12:08:51</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
