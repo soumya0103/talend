@@ -344,6 +344,42 @@
       <column comment="" key="false" length="-1" name="date" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="tPostgresqlRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="0" posY="440">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBRow_1"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="V9_X"/>
+    <elementParameter field="TEXT" name="HOST" value="context.host"/>
+    <elementParameter field="TEXT" name="PORT" value="context.port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.database"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="PostgreSQL"/>
+    <elementParameter field="TEXT" name="USER" value="context.username"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:b1h17rt8M9p8BdV+d0RXm8FyCByB1NL2cWqZF/ICx3UgSqE1hXHEC8B8eqU="/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;DROP TABLE IF EXISTS analysis_output.suspect_a_num;&#13;&#10;CREATE TABLE analysis_output.suspect_a_num AS&#13;&#10;(&#13;&#10;    WITH a_numbers_cte AS &#13;&#10;    (&#13;&#10;        SELECT DISTINCT \&quot;A_Number\&quot;&#13;&#10;        FROM staging.stg_sbc_og&#13;&#10;        WHERE \&quot;Call_Status\&quot; IN ('A', 'F') AND \&quot;Date\&quot;::date = '&quot; + context.min_date + &quot;'&#13;&#10;&#9;&#9;AND batch_id = '&quot; + context.batch_id1 + &quot;'&#13;&#10;    ),&#13;&#10;    ab_numbers_cte AS&#13;&#10;    (&#13;&#10;        SELECT \&quot;A_Number\&quot;, \&quot;B_Number\&quot;&#13;&#10;        FROM staging.stg_sbc_og&#13;&#10;        WHERE \&quot;Call_Status\&quot; = 'U' AND \&quot;Date\&quot;::date = '&quot; + context.min_date + &quot;'&#13;&#10;&#9;&#9;AND batch_id = '&quot; + context.batch_id1 + &quot;'&#13;&#10;        GROUP BY 1, 2&#13;&#10;        HAVING COUNT(*) = 1&#13;&#10;    )&#13;&#10;    SELECT ab.\&quot;A_Number\&quot;, ab.\&quot;B_Number\&quot;&#13;&#10;    FROM ab_numbers_cte ab&#13;&#10;    LEFT JOIN a_numbers_cte a ON ab.\&quot;A_Number\&quot; = a.\&quot;A_Number\&quot;&#13;&#10;    WHERE a.\&quot;A_Number\&quot; IS NULL&#13;&#10;);&#13;&#10;&#13;&#10;DROP TABLE IF EXISTS analysis_output.suspectab;&#13;&#10;CREATE TABLE analysis_output.suspectab AS&#13;&#10;(&#13;&#10;    WITH three_months_ago_data AS&#13;&#10;    (&#13;&#10;        SELECT \&quot;A_Number\&quot;, \&quot;B_Number\&quot;&#13;&#10;        FROM staging.stg_sbc_og&#13;&#10;        WHERE \&quot;Date\&quot;::date &gt;= date '&quot; + context.min_date + &quot;' - INTERVAL '3 months'&#13;&#10;        AND \&quot;Date\&quot;::date &lt;= date '&quot; + context.min_date + &quot;' - INTERVAL '1 day'&#13;&#10;        AND \&quot;Call_Status\&quot; in ('U', 'A')&#13;&#10;    )&#13;&#10;    SELECT ab.\&quot;A_Number\&quot;, ab.\&quot;B_Number\&quot;&#13;&#10;    FROM analysis_output.suspect_a_num ab&#13;&#10;    LEFT JOIN three_months_ago_data ON ab.\&quot;A_Number\&quot; = three_months_ago_data.\&quot;A_Number\&quot;&#13;&#10;    AND ab.\&quot;B_Number\&quot; = three_months_ago_data.\&quot;B_Number\&quot;&#13;&#10;    WHERE three_months_ago_data.\&quot;A_Number\&quot; IS NULL&#13;&#10;);&#13;&#10;&#13;&#10;DROP TABLE IF EXISTS analysis_output.suspect2;&#13;&#10;CREATE TABLE analysis_output.suspect2 AS&#13;&#10;(&#13;&#10;    WITH current_data_a_num AS&#13;&#10;    (&#13;&#10;        SELECT \&quot;A_Number\&quot;, \&quot;B_Number\&quot;&#13;&#10;        FROM analysis_output.suspectab&#13;&#10;    ),&#13;&#10;    a_num_ans_3_mon AS&#13;&#10;    (&#13;&#10;        SELECT \&quot;A_Number\&quot;, \&quot;B_Number\&quot;&#13;&#10;        FROM staging.stg_sbc_og&#13;&#10;        WHERE \&quot;Date\&quot;::date &gt;= date '&quot; + context.min_date + &quot;' - INTERVAL '3 months'&#13;&#10;        AND \&quot;Date\&quot;::date &lt;= date '&quot; + context.min_date + &quot;' - INTERVAL '1 day'&#13;&#10;        AND \&quot;Call_Status\&quot; = 'A'&#13;&#10;    )&#13;&#10;    SELECT current_data_a_num.\&quot;A_Number\&quot;, current_data_a_num.\&quot;B_Number\&quot;&#13;&#10;    FROM current_data_a_num&#13;&#10;    LEFT JOIN a_num_ans_3_mon ON current_data_a_num.\&quot;A_Number\&quot; = a_num_ans_3_mon.\&quot;A_Number\&quot;&#13;&#10;    WHERE a_num_ans_3_mon.\&quot;A_Number\&quot; IS NULL&#13;&#10;);&#13;&#10;&#13;&#10;DROP TABLE IF EXISTS analysis_output.suspect_ic_month;&#13;&#10;CREATE TABLE analysis_output.suspect_ic_month AS&#13;&#10;(&#13;&#10;    SELECT *&#13;&#10;    FROM staging.stg_cdr_ic&#13;&#10;    WHERE \&quot;Date\&quot;::date &gt;= date '&quot; + context.min_date + &quot;' - INTERVAL '3 months'&#13;&#10;    AND \&quot;Date\&quot;::date &lt;= date '&quot; + context.min_date + &quot;' - INTERVAL '1 day'&#13;&#10;);&#13;&#10;&#13;&#10;DROP TABLE IF EXISTS analysis_output.suspect_ic;&#13;&#10;CREATE TABLE analysis_output.suspect_ic AS&#13;&#10;(&#13;&#10;    SELECT b.*&#13;&#10;    FROM analysis_output.suspect2 b&#13;&#10;    LEFT JOIN analysis_output.suspect_ic_month a ON a.\&quot;A_Number\&quot; = b.\&quot;A_Number\&quot;&#13;&#10;    WHERE a.\&quot;A_Number\&quot; IS NULL&#13;&#10;    UNION&#13;&#10;    SELECT b.*&#13;&#10;    FROM analysis_output.suspect2 b&#13;&#10;    LEFT JOIN analysis_output.suspect_ic_month a ON a.\&quot;A_Number\&quot; = b.\&quot;B_Number\&quot;&#13;&#10;    WHERE a.\&quot;A_Number\&quot; IS NULL&#13;&#10;);&#13;&#10;&#13;&#10;DROP TABLE IF EXISTS analysis_output.suspect_a_cdr;&#13;&#10;CREATE TABLE analysis_output.suspect_a_cdr AS&#13;&#10;(&#13;&#10;    SELECT b.*, LEFT(b.\&quot;A_Number\&quot;::character varying, -6) AS a_num_sub&#13;&#10;    FROM analysis_output.suspect_ic a&#13;&#10;    LEFT JOIN staging.stg_sbc_og b&#13;&#10;    ON a.\&quot;A_Number\&quot; = b.\&quot;A_Number\&quot;&#13;&#10;    AND a.\&quot;B_Number\&quot; = b.\&quot;B_Number\&quot;&#13;&#10;    WHERE b.\&quot;Date\&quot;::date = '&quot; + context.min_date + &quot;'&#13;&#10;&#9;AND b.batch_id = '&quot; + context.batch_id1 + &quot;'&#13;&#10;);&#13;&#10;&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="PROPAGATE_RECORD_SET" value="false"/>
+    <elementParameter field="COLUMN_LIST" name="RECORD_SET_COLUMN" show="false" value=""/>
+    <elementParameter field="CHECK" name="USE_PREPAREDSTATEMENT" value="false"/>
+    <elementParameter field="TABLE" name="SET_PREPAREDSTATEMENT_PARAMETERS" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBRow_1"/>
+    <metadata connector="REJECT" name="REJECT">
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tSetGlobalVar_1" offsetLabelX="0" offsetLabelY="0" source="tSetGlobalVar_1" target="tDBConnection_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
   </connection>
@@ -454,13 +490,18 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_65acb4d9-71dd-4291-9673-baf335f312e1"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MReXwAZIH8MWKUueVmziFm71a8lhTyBCpinzAp/nDfE7zN0uSdax18vJigTXb421Rza4shrMncmw&#13;
-2A1Th9axnA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_89cd038e-df97-4248-ad5e-e32151ac6b16"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>LPPyMDbJLYnG3ccawXlNs/PxOrCFh3AZZeqUxlBbfWm5cRQnStb9QYvJMv3tPQyj3LkEI9clW8Ds&#13;
-rTg1ODaVhg==</DigestValue></Reference></SignedInfo><SignatureValue>QCauQHJ5oxc0JBesg46QoldsilkNcJHaK5iIVS8WV8BzbaDebTcijThAK3MhEDp9MGy3mNffhM71&#13;
-M6va/ohQkNWSixS5uD4LrXwZJH8eTNEpxHlsfQxFIhzYGeypMzM6bpYHWOveUO4cAsJM7ua7XJ/u&#13;
-owHUVSw12DVrKL9lxqBCJbOeg9LbbbDYX2eVwKbYOx4FkGhvcFqQMoowIUlrcBTS6DCmwJp3f9uP&#13;
-ERr7/6wMQM6vbcT0+nLt1A7viBMMIjXbrj0dtzwbmiiDb2+OML7SEf6gUgJDnDEnxXMg5V9NbBRQ&#13;
-uVkod74S3fLnjxQcCh7ZKZbCQYHu3tuJmlWbcA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBRow_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5af2ce86-7c45-49de-9e4f-c0a94e066b61"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>02Ki15YoTCBFGRqw4aJrL9xp0vUTnF0csoDBLqhtGXKIKDs9+SQ5W2Nj85EnLsymA+g6tpRu9SG7&#13;
+WSyLWjcDbA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_cc14bd2e-cda7-4d2d-94d6-085c0f1aafff"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>i3j4RevFOyWEZaGupFfJ9aXrBMogw253Jv1JoAcxh+aVlJpdbcKpT6QEgTWlHZ+BF1Jv/YjuqX/p&#13;
+Qju/JsvdOw==</DigestValue></Reference></SignedInfo><SignatureValue>Pw13JGUrTYsZBOBVTQWf4LCSpUBidFdix4HmpYNwCikFVTK6orADOPD9FXlpPaDq7gvD3yqUndSb&#13;
+gHX4GY/oML+Fcf+kyWqy10loxJycmFW7x6OBvXt5JJHuS52oDpq/OwDSvXOsA+djiS9YD4Hylrkw&#13;
+j/SUaLNSslKP9YhiTaXFK/irYGvByqbRlYbu8qnByRczpecNXgn+qDnyGJkXddcztqDulzRsE0aD&#13;
+eEtfIAoOGqiN8J1ERg7PDh9ued36PHsF7MEQJt0yVmPCR3iCJt5JQ+xqChAFmJKOIiigwj4eW4IU&#13;
+FkNB5OCJMEPM0eYZCRyGST64cXRs7Q1ydslLhg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -482,4 +523,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_89cd038e-df97-4248-ad5e-e32151ac6b16" Target="#_65acb4d9-71dd-4291-9673-baf335f312e1"><Timestamp>2024-07-08 13:33:56</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_cc14bd2e-cda7-4d2d-94d6-085c0f1aafff" Target="#_5af2ce86-7c45-49de-9e4f-c0a94e066b61"><Timestamp>2024-07-08 14:01:28</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
