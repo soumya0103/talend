@@ -3,10 +3,10 @@
     <context confirmationNeeded="false" hide="false" name="Default">
       <contextParameter comment="" internalId="_-vrBEBEJEe-xz7TU6frKUQ" name="ProcessTableName" prompt="ProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="batch_logs"/>
       <contextParameter comment="" internalId="_-vrBEREJEe-xz7TU6frKUQ" name="BatchProcessTableName" prompt="BatchProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="batch_process"/>
-      <contextParameter comment="" internalId="_-vrBEhEJEe-xz7TU6frKUQ" name="ProcessName" prompt="ProcessName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="staging_sm_in_voice"/>
+      <contextParameter comment="" internalId="_-vrBEhEJEe-xz7TU6frKUQ" name="ProcessName" prompt="ProcessName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="lan_sbc"/>
       <contextParameter comment="" internalId="_-vrBExEJEe-xz7TU6frKUQ" name="host" prompt="host?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="localhost"/>
       <contextParameter comment="" internalId="_-vrBFBEJEe-xz7TU6frKUQ" name="username" prompt="username?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="postgres"/>
-      <contextParameter comment="" internalId="_-vrBFREJEe-xz7TU6frKUQ" name="database" prompt="database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="smart"/>
+      <contextParameter comment="" internalId="_-vrBFREJEe-xz7TU6frKUQ" name="database" prompt="database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="flashcall"/>
       <contextParameter comment="" internalId="_-vrBFhEJEe-xz7TU6frKUQ" name="password" prompt="password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:xkB7e+tAPzQkBKQaBS9nWAFQg//bgKRcdZij6RYNUyEL0mZS"/>
       <contextParameter comment="" internalId="_-vrBFxEJEe-xz7TU6frKUQ" name="port" prompt="port?" promptNeeded="false" repositoryContextId="built-in" type="id_Integer" value="5432"/>
     </context>
@@ -321,33 +321,33 @@
     </connection>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_3"/>
-      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
     </subjob>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_4"/>
-      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
     </subjob>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCommit_2"/>
-      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
     </subjob>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_2"/>
-      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
     </subjob>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="TRIGGER_OUTPUT_2"/>
-      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
     </subjob>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="TRIGGER_INPUT_2"/>
-      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
     </subjob>
     <jobletNodes componentName="TRIGGER_OUTPUT" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="1120" posY="576" trigger="true">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="TRIGGER_OUTPUT_2"/>
@@ -369,13 +369,13 @@
     </jobletNodes>
   </model:JobletProcess>
   <TalendProperties:ByteArray/>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_67578d70-4ea9-47b1-84f0-ad2f34744e6e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>z+UTiJXPnIKtl97l5wN+iReATNOr0HfdIMieqEP/p+6TCeDPDjlz/gDPA2KEwVWBDgBaaaSz4ExP&#13;
-EOGwBt/30Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_85400e93-428e-4155-a6cc-10fa19fe6c05"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>3PPH9IehmQWXGXxlLcNVX9Y0mA2mkUFPLn1VeSW/0QSnpBsC6dpzEtLz+ytfM57Eng3yhNSXw2KI&#13;
-mi9/HZ1KKw==</DigestValue></Reference></SignedInfo><SignatureValue>BfQ6HBvbip3vNWZZa7ZZaGUD6JwrQ9FqgunUVM+fTKXjC+ovfViAL569aWDZtLlqJfDlyOhiEyST&#13;
-fS8Hz5ERNJ5sHJvCqSjFrzU9ZyDnqPNtNCWTsKF9JQh8zQoSmfIQpOoVibpEWd3LXTw/Cxy+vZla&#13;
-0p+sXbcp4wlT6kcPk4EBpBxHzq21lT7vngsgamK5DtcoAtSaUHnsaJF6DURXH1eFScqRibrAiYgb&#13;
-K883l4LGHmxgJ7tsfUUf0KmxU173jxjL5zryAgP0Hsta6xcferULCsQ4Ufc8MjPn9M2VyhRfjuAU&#13;
-BJrsod64XFxPxZ6EuPiWy3r4ubvPVhUnjFlo3w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_02053b54-d101-46ab-96a4-e167bdbb36fa"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4ubqpQR4pfpVymjHR1xmgyHOGkalszRYrXJ5tTJOZX67xMRzTq+MhvUEF5v3WW/DOLMCqdn9Vntm&#13;
+E/xhMnjhig==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0a71c24f-4f0a-44f3-b41b-1af7bd3bf166"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>66/5dbbnIPuocZzsk1emPMatJWACIrozrjH7V14OlmMCVMXxWvLFdJfBuvP/o3ZpXxaV9suh+zU+&#13;
+ExBczX27hQ==</DigestValue></Reference></SignedInfo><SignatureValue>cBqlUsyb7FCMNgRtILE2+/KCAan2N52UbYmm4CWS+qmsYLXWAJR6po2KEfrzZi91gvy1xPj9c7fj&#13;
+0BYOdVxtI8CJiaNYoFIKsH4zLjeMNcs3zxyAb1evowRNpWQebFe9QCx4WN28cWxZZvXjLL0c/YAb&#13;
+Z01+FuqdBaSZC2ymFbMH+ofXaOyZLFKRQGo12M/ryydnWGpeHDXOG4q3AYvlmn66NRH0x6BO+Pr1&#13;
+gUugf1ODGuOgiQKPJlLDeDDM1nHJ7DWMjbkDJfYYUx4voP+eSRpTgkgdB5rC8i3FIu+nJnv1TdFA&#13;
+oJvyBqXivJMFm7lL1HrYCKytl1f7HScLUwdytQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -397,4 +397,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_85400e93-428e-4155-a6cc-10fa19fe6c05" Target="#_67578d70-4ea9-47b1-84f0-ad2f34744e6e"><Timestamp>2024-05-20 04:30:29</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0a71c24f-4f0a-44f3-b41b-1af7bd3bf166" Target="#_02053b54-d101-46ab-96a4-e167bdbb36fa"><Timestamp>2024-07-08 09:43:15</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>

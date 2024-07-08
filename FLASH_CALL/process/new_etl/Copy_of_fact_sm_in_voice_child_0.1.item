@@ -243,7 +243,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;DEBIT_FROM_ADVANCE_PREPAID\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;DEBIT_FROM_ADVANCE_POSTPAID\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CDR_ID\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CDR_SUB_ID\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CDR_TYPE\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;STATUS\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;RE_RATING_TIMES\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;TRANS_CREATE_DATE\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;PRI_IDENTITY\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;SERVICE_CATEGORY\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;USAGE_SERVICE_TYPE\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;RESULT_CODE\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;RECIPIENT_NUMBER\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;USAGE_MEASURE_ID\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;ACTUAL_USAGE\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;RATE_USAGE\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;SERVICE_UNIT_TYPE\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;SESSION_ID\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;DEBIT_FROM_PREPAID\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;DEBIT_FROM_POSTPAID\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;DEBIT_FROM_CREDIT_POSTPAID\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;TOTAL_TAX\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;TAX_1\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;TAX_2\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;TAX_3\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;BALANCE_TYPE\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CUR_BALANCE\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CHG_BALANCE\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;BALANCE_TYPE1\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CUR_BALANCE1\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CHG_BALANCE1\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;BALANCE_TYPE2\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CUR_BALANCE2\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CHG_BALANCE2\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;BALANCE_TYPE3\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CUR_BALANCE3\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CHG_BALANCE3\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;BALANCE_TYPE4\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CUR_BALANCE4\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CHG_BALANCE4\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;BALANCE_TYPE5\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CUR_BALANCE5\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CHG_BALANCE5\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;BALANCE_TYPE6\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CUR_BALANCE6\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CHG_BALANCE6\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;BALANCE_TYPE7\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CUR_BALANCE7\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CHG_BALANCE7\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;BALANCE_TYPE8\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CUR_BALANCE8\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CHG_BALANCE8\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;BALANCE_TYPE9\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CUR_BALANCE9\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;MainOfferingID\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CallingPartyNumber\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CallingPartyIMSI\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CallingHomeCountryCode\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CallingRoamCountryCode\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CallingHomeNetworkCode\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CallingRoamNetworkCode\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CalledPartyNumber\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CalledPartyIMSI\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CalledHomeCountryCode\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CalledRoamCountryCode\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CalledHomeNetworkCode\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CalledRoamNetworkCode\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;DialedNumber\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;ServiceFlow\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CallingCellID\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;PayType\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;CallType\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;UserState\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;ChargingType\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;RoamState\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;DEBIT_AMOUNT\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;ACCOUNTING_CYCLE\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;OPERATOR_CODE\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;create_datetime\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;update_date\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;file_name\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;record_status\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;create_batch_id\&quot;, &#13;&#10;  \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;.\&quot;update_batch_id\&quot;&#13;&#10;FROM \&quot;staging\&quot;.\&quot;stg_sm_in_voice\&quot;&#13;&#10;Where UPDATE_DATE&gt;='&quot;+globalMap.get(&quot;ProcessTime&quot;)+&quot;'&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#13;&#10;  staging.stg_sm_in_voice.revenue_event,&#13;&#10;  staging.stg_sm_in_voice.\&quot;DEBIT_FROM_ADVANCE_PREPAID\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;DEBIT_FROM_ADVANCE_POSTPAID\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CDR_ID\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CDR_SUB_ID\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CDR_TYPE\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;STATUS\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;RE_RATING_TIMES\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;TRANS_CREATE_DATE\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;PRI_IDENTITY\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;SERVICE_CATEGORY\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;USAGE_SERVICE_TYPE\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;RESULT_CODE\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;RECIPIENT_NUMBER\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;USAGE_MEASURE_ID\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;ACTUAL_USAGE\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;RATE_USAGE\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;SERVICE_UNIT_TYPE\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;SESSION_ID\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;DEBIT_FROM_PREPAID\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;DEBIT_FROM_POSTPAID\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;DEBIT_FROM_CREDIT_POSTPAID\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;TOTAL_TAX\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;TAX_1\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;TAX_2\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;TAX_3\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;BALANCE_TYPE\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CUR_BALANCE\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CHG_BALANCE\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;BALANCE_TYPE1\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CUR_BALANCE1\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CHG_BALANCE1\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;BALANCE_TYPE2\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CUR_BALANCE2\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CHG_BALANCE2\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;BALANCE_TYPE3\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CUR_BALANCE3\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CHG_BALANCE3\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;BALANCE_TYPE4\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CUR_BALANCE4\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CHG_BALANCE4\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;BALANCE_TYPE5\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CUR_BALANCE5\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CHG_BALANCE5\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;BALANCE_TYPE6\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CUR_BALANCE6\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CHG_BALANCE6\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;BALANCE_TYPE7\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CUR_BALANCE7\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CHG_BALANCE7\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;BALANCE_TYPE8\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CUR_BALANCE8\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CHG_BALANCE8\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;BALANCE_TYPE9\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CUR_BALANCE9\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;MainOfferingID\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CallingPartyNumber\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CallingPartyIMSI\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CallingHomeCountryCode\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CallingRoamCountryCode\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CallingHomeNetworkCode\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CallingRoamNetworkCode\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CalledPartyNumber\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CalledPartyIMSI\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CalledHomeCountryCode\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CalledRoamCountryCode\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CalledHomeNetworkCode\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CalledRoamNetworkCode\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;DialedNumber\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;ServiceFlow\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CallingCellID\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;PayType\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;CallType\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;UserState\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;ChargingType\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;RoamState\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;DEBIT_AMOUNT\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;ACCOUNTING_CYCLE\&quot;, &#13;&#10;  staging.stg_sm_in_voice.\&quot;OPERATOR_CODE\&quot;, &#13;&#10;  staging.stg_sm_in_voice.create_datetime, &#13;&#10;  staging.stg_sm_in_voice.update_date, &#13;&#10;  staging.stg_sm_in_voice.file_name, &#13;&#10;  staging.stg_sm_in_voice.record_status, &#13;&#10;  staging.stg_sm_in_voice.create_batch_id, &#13;&#10;  staging.stg_sm_in_voice.update_batch_id&#13;&#10;FROM staging.stg_sm_in_voice&#13;&#10;--WHERE UPDATE_DATE &gt;= '\&quot; + globalMap.get(\&quot;ProcessTime\&quot;) + \&quot;'&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -255,6 +255,8 @@
     <elementParameter field="TEXT" name="CURSOR_SIZE" show="false" value="1000"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
     <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="revenue_event"/>
+      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DEBIT_FROM_ADVANCE_PREPAID"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DEBIT_FROM_ADVANCE_POSTPAID"/>
@@ -427,6 +429,7 @@
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="stg_sm_in_voice" name="tDBInput_2">
+      <column comment="" key="false" length="-1" name="revenue_event" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="DEBIT_FROM_ADVANCE_PREPAID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -690,6 +693,7 @@
     <elementParameter field="TABLE" name="THRESHLODS"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="stg_sm_in_voice" name="tFlowMeter_2">
+      <column comment="" key="false" length="-1" name="revenue_event" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="DEBIT_FROM_ADVANCE_PREPAID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -949,7 +953,7 @@
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_E4MecBQ_Ee-71udyoAn91w-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_SZ8aMDq1Ee-FVq0QXcY9oQ-tMap_1-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
@@ -959,18 +963,19 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="deactivate_records">
-      <column comment="" key="false" length="-1" name="CallingCellID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="revenue_event" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="update_date" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="record_status" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Character" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="update_batch_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="deactivate_rows_in_rejects">
-      <column comment="" key="false" length="-1" name="CallingCellID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="revenue_event" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="update_date" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="record_status" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Character" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="update_batch_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" label="facts" name="facts">
+      <column comment="" key="false" length="-1" name="revenue_event" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="DEBIT_FROM_ADVANCE_PREPAID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1233,6 +1238,7 @@
       <column comment="" key="false" length="-1" name="dim_time_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="rejects">
+      <column comment="" key="false" length="-1" name="revenue_event" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="DEBIT_FROM_ADVANCE_PREPAID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1483,7 +1489,7 @@
       <column comment="" key="false" length="10" name="update_batch_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="dim_pt_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="10" name="dim_pt_id" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="-1" name="dim_sc_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
@@ -1495,22 +1501,23 @@
       <column comment="" key="false" length="-1" name="dim_time_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables activateExpressionFilter="true" expressionFilter="row3.record_status == 'D'" name="deactivate_records" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row3.CallingCellID " name="CallingCellID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.revenue_event" name="revenue_event" nullable="true" type="id_String"/>
         <mapperTableEntries expression="TalendDate.getCurrentDate()" name="update_date" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="'D'" name="record_status" nullable="true" type="id_Character"/>
         <mapperTableEntries expression="context.batch_id" name="update_batch_id" nullable="true" type="id_Integer"/>
       </outputTables>
       <outputTables activateCondensedTool="true" activateExpressionFilter="true" expressionFilter="row3.record_status =='D'" name="deactivate_rows_in_rejects" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row3.CallingCellID  " name="CallingCellID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.revenue_event" name="revenue_event" nullable="true" type="id_String"/>
         <mapperTableEntries expression="TalendDate.getCurrentDate() " name="update_date" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="'D' " name="record_status" nullable="true" type="id_Character"/>
         <mapperTableEntries expression="context.batch_id " name="update_batch_id" nullable="true" type="id_Integer"/>
       </outputTables>
       <outputTables activateCondensedTool="true" activateExpressionFilter="true" expressionFilter="row3.record_status =='A'  &amp;&amp;  row13.time_id !=null" name="facts" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row3.DEBIT_FROM_ADVANCE_PREPAID" name="DEBIT_FROM_ADVANCE_PREPAID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.revenue_event " name="revenue_event" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.DEBIT_FROM_ADVANCE_PREPAID  " name="DEBIT_FROM_ADVANCE_PREPAID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.DEBIT_FROM_ADVANCE_POSTPAID" name="DEBIT_FROM_ADVANCE_POSTPAID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.CDR_ID" name="CDR_ID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.CDR_SUB_ID" name="CDR_SUB_ID" nullable="true" type="id_String"/>
@@ -1604,6 +1611,7 @@
         <mapperTableEntries expression="row13.time_id " name="dim_time_id" nullable="true" type="id_BigDecimal"/>
       </outputTables>
       <outputTables activateCondensedTool="true" name="rejects" reject="true" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row3.revenue_event " name="revenue_event" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.DEBIT_FROM_ADVANCE_PREPAID " name="DEBIT_FROM_ADVANCE_PREPAID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.DEBIT_FROM_ADVANCE_POSTPAID " name="DEBIT_FROM_ADVANCE_POSTPAID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.CDR_ID " name="CDR_ID" nullable="true" type="id_String"/>
@@ -1688,7 +1696,7 @@
         <mapperTableEntries expression="'A' " name="record_status" nullable="true" type="id_Character"/>
         <mapperTableEntries expression="context.batch_id " name="create_batch_id" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="context.batch_id " name="update_batch_id" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row4.dim_pt_id  " name="dim_pt_id" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row4.dim_pt_id  " name="dim_pt_id" type="id_BigDecimal"/>
         <mapperTableEntries expression="row5.dim_sc_id  " name="dim_sc_id" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="row7.dim_sut_id  " name="dim_sut_id" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="row6.dim_sf_id  " name="dim_sf_id" nullable="true" type="id_BigDecimal"/>
@@ -1698,6 +1706,7 @@
         <mapperTableEntries expression="row13.time_id  " name="dim_time_id" nullable="true" type="id_BigDecimal"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row3" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="revenue_event" nullable="true" type="id_String"/>
         <mapperTableEntries name="DEBIT_FROM_ADVANCE_PREPAID" nullable="true" type="id_String"/>
         <mapperTableEntries name="DEBIT_FROM_ADVANCE_POSTPAID" nullable="true" type="id_String"/>
         <mapperTableEntries name="CDR_ID" nullable="true" type="id_String"/>
@@ -1872,6 +1881,11 @@
     <elementParameter field="TABLE" name="ADD_COLS"/>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="revenue_event"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DEBIT_FROM_ADVANCE_PREPAID"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -2341,6 +2355,7 @@
     <elementParameter field="TEXT" name="LABEL" value="new_rows"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="facts" name="tDBOutput_1">
+      <column comment="" key="false" length="-1" name="revenue_event" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="DEBIT_FROM_ADVANCE_PREPAID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -2603,6 +2618,7 @@
       <column comment="" key="false" length="-1" name="dim_time_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="facts" name="REJECT">
+      <column comment="" key="false" length="-1" name="revenue_event" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="DEBIT_FROM_ADVANCE_PREPAID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -3100,6 +3116,11 @@
     <elementParameter field="TABLE" name="ADD_COLS"/>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="revenue_event"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="DEBIT_FROM_ADVANCE_PREPAID"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -3569,6 +3590,7 @@
     <elementParameter field="TEXT" name="LABEL" value="reject_records"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_4">
+      <column comment="" key="false" length="-1" name="revenue_event" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="DEBIT_FROM_ADVANCE_PREPAID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -3819,7 +3841,7 @@
       <column comment="" key="false" length="10" name="update_batch_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="dim_pt_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="10" name="dim_pt_id" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="-1" name="dim_sc_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
@@ -3831,6 +3853,7 @@
       <column comment="" key="false" length="-1" name="dim_time_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
+      <column comment="" key="false" length="-1" name="revenue_event" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="DEBIT_FROM_ADVANCE_PREPAID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -4081,7 +4104,7 @@
       <column comment="" key="false" length="10" name="update_batch_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="dim_pt_id" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="10" name="dim_pt_id" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="-1" name="dim_sc_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
@@ -4298,7 +4321,7 @@
     <elementParameter field="TABLE" name="ADD_COLS"/>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="true"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS">
-      <elementValue elementRef="SCHEMA_COLUMN" value="CallingCellID"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="revenue_event"/>
       <elementValue elementRef="UPDATE_KEY" value="true"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="false"/>
@@ -4327,13 +4350,13 @@
     <elementParameter field="TEXT" name="LABEL" value="deactivate_records"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_2">
-      <column comment="" key="false" length="-1" name="CallingCellID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="revenue_event" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="update_date" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="record_status" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Character" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="update_batch_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="false" length="-1" name="CallingCellID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="revenue_event" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="update_date" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="record_status" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Character" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="update_batch_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
@@ -4374,7 +4397,7 @@
     <elementParameter field="TABLE" name="ADD_COLS"/>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="true"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS">
-      <elementValue elementRef="SCHEMA_COLUMN" value="CallingCellID"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="revenue_event"/>
       <elementValue elementRef="UPDATE_KEY" value="true"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="false"/>
@@ -4403,13 +4426,13 @@
     <elementParameter field="TEXT" name="LABEL" value="deactivate_reject_records"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutput_3">
-      <column comment="" key="false" length="-1" name="CallingCellID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="revenue_event" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="update_date" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="record_status" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Character" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="update_batch_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="false" length="-1" name="CallingCellID" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="revenue_event" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="update_date" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="record_status" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Character" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="update_batch_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
@@ -4777,6 +4800,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk3"/>
   </connection>
   <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tFlowMeter_2">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="revenue_event"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
@@ -4824,6 +4852,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="dim_date_id"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="revenue_event"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="facts"/>
@@ -4852,6 +4883,9 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="dim_sf_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="revenue_event"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -4964,13 +4998,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e20e7e46-89e9-468e-b6cd-3d7c285e9f17"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>sVvQJt6A47QQ2bBqtqKB8LQDogegUacctrV1rnYp7jf67QSI69iLaD5VSHmS1xRqvazOd/rIG0bB&#13;
-gJnjRSX0Rg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8d506fcb-1952-4fd9-975d-a570c397a08e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>24NTkvRJTG9+3jnsmdivAuLYqoyotQcJ7K2gPYM79k8C82zpcUN6J7EU8fsfYFfGwVc4lVYaYM9v&#13;
-gZ+ZenZyPg==</DigestValue></Reference></SignedInfo><SignatureValue>lpFzbPgI5ey0JVS5Nnq1EDpxcYYtNf1AlAFfbD7Gbu75q5AAcKcnhbwMnC77tM57/0ihJPJ5nKDS&#13;
-aYj82fd0jIBpmmB39ns+5IkxORppIkGbJwlNG/nsh2IPuWVcHzCHWOm+IMhAiHrQFChSxFK3UJA7&#13;
-COg5qBmG34IOj67K2pd+yf5rbbDoMJESGuHe0ZyCEkj9PnNvTyYWLxkMvyuWMr18QCMfiSiSc71v&#13;
-ZX1lvF+Y2LYwwtkvRIGNB7tiAwvFgdUBLDwD/fTv8aGynW9bNvk7or8KsIcoPzaK4TcyAP+ZahHk&#13;
-rxksyZpOvuNfX4cih7wZGWJNZLKy2YyGhqMFkQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_26cd3d0b-9249-4de3-9aeb-87aab4d2c5c6"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Ot1lCRLXgcXrjCS9BmFd4i73sZTqn5uNmlM9Vfuk7JJ6I90bYcrq/Cm94pNelD9hBWJI5x323XJT&#13;
+rADqdjOqoA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a0e831ca-c232-45fc-a1bd-8d33f6c1a42a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>/qM+dbYkZqVMCOf/dBbshhW/3cnupdgiLUSuTej5cZQ+l08YR20IiOYbPUyKfZrk+EwWxK6krJCQ&#13;
+Pqr7cJnNCQ==</DigestValue></Reference></SignedInfo><SignatureValue>TEHRq8IlqewpH8VWwc/k0KSWy4BzyTcNpFDK8fUZqlFv5REfSN/tJY0BfQy+97t26eW/sfX47u+1&#13;
++PGkcGHwPh+XfmqoZ0/EkhP0XGprlCBWdKPPqUhrpbiDz7CRehktwTQJ4pga4rF+rtLnZRP2kwsr&#13;
+73bg6V6rkInBFOjLTpTjx+kfjX8i8mMlDwJp29cSVAbmm4hBuRH9ury/IFAHO7uT3itaIuBK5Oon&#13;
+MCai3RkkByze/lr5IPmkVep5xnivuu3We01FUOFMpX0178QsDTjTQmqYmSMbqst/KMASdNoqpptb&#13;
+fgLYh7jL/Wb/zGziJQLDKfOdb0qm2F6vPQKN5Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -4992,4 +5026,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8d506fcb-1952-4fd9-975d-a570c397a08e" Target="#_e20e7e46-89e9-468e-b6cd-3d7c285e9f17"><Timestamp>2024-07-05 07:02:45</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a0e831ca-c232-45fc-a1bd-8d33f6c1a42a" Target="#_26cd3d0b-9249-4de3-9aeb-87aab4d2c5c6"><Timestamp>2024-07-05 10:25:14</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
