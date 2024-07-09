@@ -460,13 +460,13 @@
     <elementParameter field="TEXT" name="PORT" value="context.port"/>
     <elementParameter field="TEXT" name="DBNAME" value="context.database"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="PostgreSQL"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;analysis_output&quot;"/>
     <elementParameter field="TEXT" name="USER" value="context.username"/>
     <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:s5fgCsGr2ujKS3sbyu+1XzJmnrDMV986JO/x9QlDstGjVRl/6h/lgXFsXp0="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;sql_analysis_flash&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
-    <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" show="false" value="false"/>
+    <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" value="false"/>
     <elementParameter field="CHECK" name="SPATIAL_INDEX" show="false" value="false"/>
     <elementParameter field="CHECK" name="GEOMETRY_COLUMNS" show="false" value="false"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
@@ -738,7 +738,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;\&quot;delete from analysis_output.sql_analysis_output where date::date =' \&quot; + context.min_date + \&quot; ';&#13;&#10;\&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;delete from analysis_output.sql_analysis_flash where date::date =' &quot; + context.min_date + &quot; ';&#13;&#10;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -794,6 +794,47 @@
     <metadata connector="REJECT" name="REJECT">
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="0" posY="-120">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_5"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value="tDBConnection_1"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="V9_X"/>
+    <elementParameter field="TEXT" name="HOST" value="context.host"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="PostgreSQL"/>
+    <elementParameter field="TEXT" name="PORT" value="context.port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.database"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;public&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="context.username"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:cNMEByBOqoANvZxYdbVXKuFJbFIGSdCzWMyKye1ghpzC7EBW/CKHXsELbZw="/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT  job_status,data_processed FROM &quot; +context.BatchProcessTableName+&#13;&#10;&quot; WHERE process_name='&quot;+context.PredecessorName+&quot;'&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="postgres_id"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="USE_CURSOR" value="false"/>
+    <elementParameter field="TEXT" name="CURSOR_SIZE" show="false" value="1000"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="job_status"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="data_processed"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="predecessor_status"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBInput_5">
+      <column comment="" key="false" length="-1" name="job_status" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="CHAR" type="id_Character" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="data_processed" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="CHAR" type="id_Character" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tSetGlobalVar_1" offsetLabelX="0" offsetLabelY="0" source="tSetGlobalVar_1" target="tDBConnection_1">
@@ -949,13 +990,18 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_12a9bdee-37af-4a2a-af0b-419e084cd3a5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PNM82Dpe1PJRAkyOrrw3su7Pt5wHMqglH58UZFbNdyWN/g6GC+OahPny03Zvgl/i8m5I7UbV2Hfz&#13;
-K9T1TxsbyA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c0151169-eaf7-4c7a-898a-fd09b2304665"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>92WUpXD2cjeLBqO1iJRLRo0fc7zn9FlTpk4NybQzn6MjNWopebL+JdHqgW7FIOVLwMH4Xi9AP5x5&#13;
-yu03naaBrw==</DigestValue></Reference></SignedInfo><SignatureValue>MMzch2XwwlrRSbDMkkiVU0eiL9qB+ZKmvT8hxlWMaTIjuS/nTHjV1mFO/OKqamyj9OTK3sEikJx+&#13;
-KpznQ8ZKiLKX4OF7cMwYHgLOyhQk8I8koJ7EIhW0uxYUhwa9B7YIhfJvQTR/KJ7QufEMEagnR4Rv&#13;
-TXoybEO0jSZ82odAqN/JbohZx2ETCKz1fUnSkmxZzAFcwo7fiBDvea1e0G9gc71hryP3JUYbimdG&#13;
-s3arngxUA+gE9ohmsqmAbVBgjgSwNFv8ZKvVIT9gpLKJZfjUDedyV6D+d9je5zjx+HHKtm/UNnLa&#13;
-w3ka6m75Emob92y8HfO4/jIdLhwBHsfrZtZXPQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_5"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1fd9f5ea-1394-4650-be30-16146ee0ac2a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>SIhhNe2dKwIQxIPzQd+QRa1kcidvDj3PoRQwoNAkq3yWasrnYt6bhlyikwIiaWBePIh0jT7xkbIn&#13;
+PVuF5dBoIg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a3e0da83-38ee-4329-ad6c-c3881f54a47b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>j+9Gsa+DAKjOzd1mUNdgwrH/msfRhpFg575OIJaiS109ey4XNUkhIMHkFsh9T5kHXFr/3y10DALg&#13;
+JYSESqvhrQ==</DigestValue></Reference></SignedInfo><SignatureValue>EFQEp53B3TAFwbUcJ3fUX7wqLLcOAO1RztVkaZZ1rVLB+6086KQtkzU/9MhunUrQOSuuX1SRct+l&#13;
+i8MYARWLW8gUDuLcuOHk/gX0gNKmIYnolzaW1bF8OB2zHyfT5UQkXdiqWMO8weTQOuzhRnhozKB1&#13;
+vSWAtu/xHN4MG30C+rXi9/DZcuLW3XJFD9XLqyK9oaPqibwhdBLMo4RVZyQRpbJtr4PTPvhY6VUt&#13;
+b+k+jZ1XqvQ5auhprDqemakMbZaaCnLlVyLoH571C6DJxvRUtblhV9ffqwSsWqp8nzEOMRZAKefH&#13;
+yjBBWeUB35Gbq6AEOZm5sKQSwJ8ct3k2SDZSsQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -977,4 +1023,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c0151169-eaf7-4c7a-898a-fd09b2304665" Target="#_12a9bdee-37af-4a2a-af0b-419e084cd3a5"><Timestamp>2024-07-09 02:37:45</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a3e0da83-38ee-4329-ad6c-c3881f54a47b" Target="#_1fd9f5ea-1394-4650-be30-16146ee0ac2a"><Timestamp>2024-07-09 02:53:17</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
