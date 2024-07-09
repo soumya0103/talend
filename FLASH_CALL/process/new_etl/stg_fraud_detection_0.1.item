@@ -213,6 +213,7 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="data_processed"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="predecessor_status"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_1">
       <column comment="" key="false" length="-1" name="job_status" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="CHAR" type="id_Character" usefulColumn="true"/>
@@ -293,6 +294,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_2"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="//Code generated according to input schema and output schema&#13;&#10;//output_row.batch_id = input_row.batch_id;&#10;&#10;context.batch_id1 = input_row.batch_id;&#10;&#10;System.out.println(&quot;Batch Id is &quot; + context.batch_id1  );&#13;&#10;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="LABEL" value="latest_batch_id"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_2">
       <column comment="" key="false" length="-1" name="batch_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
@@ -339,6 +341,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_3"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="//Code generated according to input schema and output schema&#13;&#10;//output_row.date = input_row.date;&#10;&#10;context.min_date = input_row.date;&#10;&#10;System.out.println(&quot;min date &quot; + context.min_date  );&#10;&#13;&#10;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="LABEL" value="min_date"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_3">
       <column comment="" key="false" length="-1" name="date" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
@@ -360,7 +363,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;DROP TABLE IF EXISTS analysis_output.suspect_a_num;&#13;&#10;CREATE TABLE analysis_output.suspect_a_num AS&#13;&#10;(&#13;&#10;    WITH a_numbers_cte AS &#13;&#10;    (&#13;&#10;        SELECT DISTINCT \&quot;A_Number\&quot;&#13;&#10;        FROM staging.stg_sbc_og&#13;&#10;        WHERE \&quot;Call_Status\&quot; IN ('A', 'F') AND \&quot;Date\&quot;::date = '&quot; + context.min_date + &quot;'&#13;&#10;&#9;&#9;AND batch_id = '&quot; + context.batch_id1 + &quot;'&#13;&#10;    ),&#13;&#10;    ab_numbers_cte AS&#13;&#10;    (&#13;&#10;        SELECT \&quot;A_Number\&quot;, \&quot;B_Number\&quot;&#13;&#10;        FROM staging.stg_sbc_og&#13;&#10;        WHERE \&quot;Call_Status\&quot; = 'U' AND \&quot;Date\&quot;::date = '&quot; + context.min_date + &quot;'&#13;&#10;&#9;&#9;AND batch_id = '&quot; + context.batch_id1 + &quot;'&#13;&#10;        GROUP BY 1, 2&#13;&#10;        HAVING COUNT(*) = 1&#13;&#10;    )&#13;&#10;    SELECT ab.\&quot;A_Number\&quot;, ab.\&quot;B_Number\&quot;&#13;&#10;    FROM ab_numbers_cte ab&#13;&#10;    LEFT JOIN a_numbers_cte a ON ab.\&quot;A_Number\&quot; = a.\&quot;A_Number\&quot;&#13;&#10;    WHERE a.\&quot;A_Number\&quot; IS NULL&#13;&#10;);&#13;&#10;&#13;&#10;DROP TABLE IF EXISTS analysis_output.suspectab;&#13;&#10;CREATE TABLE analysis_output.suspectab AS&#13;&#10;(&#13;&#10;    WITH three_months_ago_data AS&#13;&#10;    (&#13;&#10;        SELECT \&quot;A_Number\&quot;, \&quot;B_Number\&quot;&#13;&#10;        FROM staging.stg_sbc_og&#13;&#10;        WHERE \&quot;Date\&quot;::date &gt;= date '&quot; + context.min_date + &quot;' - INTERVAL '3 months'&#13;&#10;        AND \&quot;Date\&quot;::date &lt;= date '&quot; + context.min_date + &quot;' - INTERVAL '1 day'&#13;&#10;        AND \&quot;Call_Status\&quot; in ('U', 'A')&#13;&#10;    )&#13;&#10;    SELECT ab.\&quot;A_Number\&quot;, ab.\&quot;B_Number\&quot;&#13;&#10;    FROM analysis_output.suspect_a_num ab&#13;&#10;    LEFT JOIN three_months_ago_data ON ab.\&quot;A_Number\&quot; = three_months_ago_data.\&quot;A_Number\&quot;&#13;&#10;    AND ab.\&quot;B_Number\&quot; = three_months_ago_data.\&quot;B_Number\&quot;&#13;&#10;    WHERE three_months_ago_data.\&quot;A_Number\&quot; IS NULL&#13;&#10;);&#13;&#10;&#13;&#10;DROP TABLE IF EXISTS analysis_output.suspect2;&#13;&#10;CREATE TABLE analysis_output.suspect2 AS&#13;&#10;(&#13;&#10;    WITH current_data_a_num AS&#13;&#10;    (&#13;&#10;        SELECT \&quot;A_Number\&quot;, \&quot;B_Number\&quot;&#13;&#10;        FROM analysis_output.suspectab&#13;&#10;    ),&#13;&#10;    a_num_ans_3_mon AS&#13;&#10;    (&#13;&#10;        SELECT \&quot;A_Number\&quot;, \&quot;B_Number\&quot;&#13;&#10;        FROM staging.stg_sbc_og&#13;&#10;        WHERE \&quot;Date\&quot;::date &gt;= date '&quot; + context.min_date + &quot;' - INTERVAL '3 months'&#13;&#10;        AND \&quot;Date\&quot;::date &lt;= date '&quot; + context.min_date + &quot;' - INTERVAL '1 day'&#13;&#10;        AND \&quot;Call_Status\&quot; = 'A'&#13;&#10;    )&#13;&#10;    SELECT current_data_a_num.\&quot;A_Number\&quot;, current_data_a_num.\&quot;B_Number\&quot;&#13;&#10;    FROM current_data_a_num&#13;&#10;    LEFT JOIN a_num_ans_3_mon ON current_data_a_num.\&quot;A_Number\&quot; = a_num_ans_3_mon.\&quot;A_Number\&quot;&#13;&#10;    WHERE a_num_ans_3_mon.\&quot;A_Number\&quot; IS NULL&#13;&#10;);&#13;&#10;&#13;&#10;DROP TABLE IF EXISTS analysis_output.suspect_ic_month;&#13;&#10;CREATE TABLE analysis_output.suspect_ic_month AS&#13;&#10;(&#13;&#10;    SELECT *&#13;&#10;    FROM staging.stg_cdr_ic&#13;&#10;    WHERE \&quot;Date\&quot;::date &gt;= date '&quot; + context.min_date + &quot;' - INTERVAL '3 months'&#13;&#10;    AND \&quot;Date\&quot;::date &lt;= date '&quot; + context.min_date + &quot;' - INTERVAL '1 day'&#13;&#10;);&#13;&#10;&#13;&#10;DROP TABLE IF EXISTS analysis_output.suspect_ic;&#13;&#10;CREATE TABLE analysis_output.suspect_ic AS&#13;&#10;(&#13;&#10;    SELECT b.*&#13;&#10;    FROM analysis_output.suspect2 b&#13;&#10;    LEFT JOIN analysis_output.suspect_ic_month a ON a.\&quot;A_Number\&quot; = b.\&quot;A_Number\&quot;&#13;&#10;    WHERE a.\&quot;A_Number\&quot; IS NULL&#13;&#10;    UNION&#13;&#10;    SELECT b.*&#13;&#10;    FROM analysis_output.suspect2 b&#13;&#10;    LEFT JOIN analysis_output.suspect_ic_month a ON a.\&quot;A_Number\&quot; = b.\&quot;B_Number\&quot;&#13;&#10;    WHERE a.\&quot;A_Number\&quot; IS NULL&#13;&#10;);&#13;&#10;&#13;&#10;DROP TABLE IF EXISTS analysis_output.suspect_a_cdr;&#13;&#10;CREATE TABLE analysis_output.suspect_a_cdr AS&#13;&#10;(&#13;&#10;    SELECT b.*, LEFT(b.\&quot;A_Number\&quot;::character varying, -6) AS a_num_sub&#13;&#10;    FROM analysis_output.suspect_ic a&#13;&#10;    LEFT JOIN staging.stg_sbc_og b&#13;&#10;    ON a.\&quot;A_Number\&quot; = b.\&quot;A_Number\&quot;&#13;&#10;    AND a.\&quot;B_Number\&quot; = b.\&quot;B_Number\&quot;&#13;&#10;    WHERE b.\&quot;Date\&quot;::date = '&quot; + context.min_date + &quot;'&#13;&#10;&#9;AND b.batch_id = '&quot; + context.batch_id1 + &quot;'&#13;&#10;);&#13;&#10;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;DROP TABLE IF EXISTS analysis_output.suspect_a_num;&#13;&#10;CREATE TABLE analysis_output.suspect_a_num AS&#13;&#10;(&#13;&#10;    WITH a_numbers_cte AS &#13;&#10;    (&#13;&#10;        SELECT DISTINCT a_number&#13;&#10;        FROM staging.stg_sbc_ic&#13;&#10;        WHERE call_status IN ('A', 'F') AND date::date = '&quot; + context.min_date + &quot;'&#13;&#10;&#9;&#9;AND create_batch_id = '&quot; + context.batch_id1 + &quot;'&#13;&#10;    ),&#13;&#10;    ab_numbers_cte AS&#13;&#10;    (&#13;&#10;        SELECT a_number, b_number&#13;&#10;        FROM staging.stg_sbc_og&#13;&#10;        WHERE call_status = 'U' AND date::date = '&quot; + context.min_date + &quot;'&#13;&#10;&#9;&#9;AND create_batch_id = '&quot; + context.batch_id1 + &quot;'&#13;&#10;        GROUP BY 1, 2&#13;&#10;        HAVING COUNT(*) = 1&#13;&#10;    )&#13;&#10;    SELECT ab.a_number, ab.b_number&#13;&#10;    FROM ab_numbers_cte ab&#13;&#10;    LEFT JOIN a_numbers_cte a ON ab.a_number = a.a_number&#13;&#10;    WHERE a.a_number IS NULL&#13;&#10;);&#13;&#10;&#13;&#10;DROP TABLE IF EXISTS analysis_output.suspectab;&#13;&#10; CREATE TABLE analysis_output.suspectab AS&#13;&#10; (&#13;&#10;     WITH three_months_ago_data AS&#13;&#10;     (&#13;&#10;         SELECT a_number, b_number&#13;&#10;        FROM staging.stg_sbc_og&#13;&#10;         WHERE date::date &gt;= date '&quot; + context.min_date + &quot;' - INTERVAL '3 months'&#13;&#10;         AND date::date &lt;= date '&quot; + context.min_date + &quot;' - INTERVAL '1 day'&#13;&#10;         AND call_status in ('U', 'A')&#13;&#10;     )&#13;&#10;     SELECT ab.a_number, ab.b_number&#13;&#10;     FROM analysis_output.suspect_a_num ab&#13;&#10;     LEFT JOIN three_months_ago_data ON ab.a_number = three_months_ago_data.a_number&#13;&#10;     AND ab.b_number= three_months_ago_data.b_number&#13;&#10;     WHERE three_months_ago_data.a_number IS NULL&#13;&#10; );&#13;&#10;&#13;&#10;DROP TABLE IF EXISTS analysis_output.suspect2;&#13;&#10;CREATE TABLE analysis_output.suspect2 AS&#13;&#10;(&#13;&#10;    WITH current_data_a_num AS&#13;&#10;    (&#13;&#10;        SELECT a_number, b_number&#13;&#10;        FROM analysis_output.suspectab&#13;&#10;    ),&#13;&#10;    a_num_ans_3_mon AS&#13;&#10;    (&#13;&#10;        SELECT a_number, b_number&#13;&#10;        FROM staging.stg_sbc_og&#13;&#10;        WHERE date::date &gt;= date '&quot; + context.min_date + &quot;' - INTERVAL '3 months'&#13;&#10;        AND date::date &lt;= date '&quot; + context.min_date + &quot;' - INTERVAL '1 day'&#13;&#10;        AND call_status = 'A'&#13;&#10;    )&#13;&#10;    SELECT current_data_a_num.a_number, current_data_a_num.b_number&#13;&#10;    FROM current_data_a_num&#13;&#10;    LEFT JOIN a_num_ans_3_mon ON current_data_a_num.a_number = a_num_ans_3_mon.a_number&#13;&#10;    WHERE a_num_ans_3_mon.a_number IS NULL&#13;&#10;);&#13;&#10;&#13;&#10;DROP TABLE IF EXISTS analysis_output.suspect_ic_month;&#13;&#10;CREATE TABLE analysis_output.suspect_ic_month AS&#13;&#10;(&#13;&#10;    SELECT *&#13;&#10;    FROM staging.stg_sbc_ic&#13;&#10;    WHERE date::date &gt;= date '&quot; + context.min_date + &quot;' - INTERVAL '3 months'&#13;&#10;    AND date::date &lt;= date '&quot; + context.min_date + &quot;' - INTERVAL '1 day'&#13;&#10;);&#13;&#10;&#13;&#10;DROP TABLE IF EXISTS analysis_output.suspect_ic;&#13;&#10;CREATE TABLE analysis_output.suspect_ic AS&#13;&#10;(&#13;&#10;    SELECT b.*&#13;&#10;    FROM analysis_output.suspect2 b&#13;&#10;    LEFT JOIN analysis_output.suspect_ic_month a ON a.a_number = b.a_number&#13;&#10;    WHERE a.a_number IS NULL&#13;&#10;    UNION&#13;&#10;    SELECT b.*&#13;&#10;    FROM analysis_output.suspect2 b&#13;&#10;    LEFT JOIN analysis_output.suspect_ic_month a ON a.a_number = b.b_number&#13;&#10;    WHERE a.a_number IS NULL&#13;&#10;);&#13;&#10;&#13;&#10;DROP TABLE IF EXISTS analysis_output.suspect_a_cdr;&#13;&#10;CREATE TABLE analysis_output.suspect_a_cdr AS&#13;&#10;(&#13;&#10;    SELECT b.*, LEFT(b.a_number::character varying, -6) AS a_num_sub&#13;&#10;    FROM analysis_output.suspect_ic a&#13;&#10;    LEFT JOIN staging.stg_sbc_og b&#13;&#10;    ON a.a_number = b.a_number&#13;&#10;    AND a.b_number = b.b_number&#13;&#10;    WHERE b.date::date = '&quot; + context.min_date + &quot;'&#13;&#10;&#9;AND b.create_batch_id = '&quot; + context.batch_id1 + &quot;'&#13;&#10;);&#13;&#10;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -373,11 +376,297 @@
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
+    <elementParameter field="TEXT" name="LABEL" value="intermediate_tables"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBRow_1"/>
     <metadata connector="REJECT" name="REJECT">
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="200" posY="440">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_4"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="V9_X"/>
+    <elementParameter field="TEXT" name="HOST" value="context.host"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="PostgreSQL"/>
+    <elementParameter field="TEXT" name="PORT" value="context.port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.database"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="context.username"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:riLNr8Tp2hlFVOEPdmzmEEBXF6rEl3zY31Lwa6KcaGl3AAEH8845ak0k6LA="/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT a_number,b_number,originating_mdl_location,originating_mdl_dial_code,mdl_destination,mdl_destination_dial_code,&#13;&#10;       date,time,answered_time,unanswered_time,call_status,release_cause,a_num_sub&#13;&#10;FROM analysis_output.suspect_a_cdr&#13;&#10;WHERE date::date = '&quot; + context.min_date + &quot;'  &#13;&#10;  AND unanswered_time::float &lt; 5 &#13;&#10;  AND release_cause NOT IN ('N7_SUBSCRIBER_ABSENT', 'N7_NO_USER_RESPONDING', 'N7_SUBSCRIBER_BUSY', 'N7_NO_ANSWER_FROM_USER')&#13;&#10;  AND a_num_sub IN (&#13;&#10;        SELECT a_num_sub &#13;&#10;        FROM analysis_output.suspect_a_cdr&#13;&#10;        WHERE date::date = '&quot; + context.min_date + &quot;'&#13;&#10;        GROUP BY 1&#13;&#10;        HAVING COUNT(*) &gt; 50&#13;&#10;);&#13;&#10;&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="postgres_id"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="USE_CURSOR" value="false"/>
+    <elementParameter field="TEXT" name="CURSOR_SIZE" show="false" value="1000"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="a_number"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="b_number"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="originating_mdl_location"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="originating_mdl_dial_code"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="mdl_destination"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="mdl_destination_dial_code"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="date"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="time"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="answered_time"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="unanswered_time"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="call_status"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="release_cause"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="a_num_sub"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="suspect_a_cdr"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBInput_4">
+      <column comment="" key="false" length="100" name="a_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="b_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="originating_mdl_location" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="originating_mdl_dial_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="mdl_destination" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="mdl_destination_dial_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="time" nullable="true" pattern="&quot;HH:mm:ss&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="answered_time" nullable="true" pattern="" precision="0" sourceType="FLOAT4" type="id_Float" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="unanswered_time" nullable="true" pattern="" precision="0" sourceType="FLOAT4" type="id_Float" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="call_status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="release_cause" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="a_num_sub" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="440" posY="440">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="V9_X"/>
+    <elementParameter field="TEXT" name="HOST" value="context.host"/>
+    <elementParameter field="TEXT" name="PORT" value="context.port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.database"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="PostgreSQL"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="context.username"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:s5fgCsGr2ujKS3sbyu+1XzJmnrDMV986JO/x9QlDstGjVRl/6h/lgXFsXp0="/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;sql_analysis_flash&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="UPDATE_OR_INSERT"/>
+    <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" value="false"/>
+    <elementParameter field="CHECK" name="SPATIAL_INDEX" show="false" value="false"/>
+    <elementParameter field="CHECK" name="GEOMETRY_COLUMNS" show="false" value="false"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="postgres_id"/>
+    <elementParameter field="CHECK" name="USE_ALTERNATE_SCHEMA" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ALTERNATE_SCHEMA" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="SAVE_POINT" show="false" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
+    <elementParameter field="TABLE" name="ADD_COLS"/>
+    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="true"/>
+    <elementParameter field="TABLE" name="FIELD_OPTIONS">
+      <elementValue elementRef="SCHEMA_COLUMN" value="a_number"/>
+      <elementValue elementRef="UPDATE_KEY" value="true"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="b_number"/>
+      <elementValue elementRef="UPDATE_KEY" value="true"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="originating_mdl_location"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="originating_mdl_dial_code"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="mdl_destination"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="mdl_destination_dial_code"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="date"/>
+      <elementValue elementRef="UPDATE_KEY" value="true"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="time"/>
+      <elementValue elementRef="UPDATE_KEY" value="true"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="answered_time"/>
+      <elementValue elementRef="UPDATE_KEY" value="true"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="unanswered_time"/>
+      <elementValue elementRef="UPDATE_KEY" value="true"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="call_status"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="release_cause"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="a_num_sub"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
+    <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" show="false" value="true"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" show="false" value="10000"/>
+    <elementParameter field="TEXT" name="LABEL" value="sql_analysis_flash"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBOutput_1">
+      <column comment="" key="false" length="100" name="a_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="b_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="originating_mdl_location" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="originating_mdl_dial_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="mdl_destination" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="mdl_destination_dial_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="time" nullable="true" pattern="&quot;HH:mm:ss&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="answered_time" nullable="true" pattern="" precision="0" sourceType="FLOAT4" type="id_Float" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="unanswered_time" nullable="true" pattern="" precision="0" sourceType="FLOAT4" type="id_Float" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="call_status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="release_cause" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="a_num_sub" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" name="REJECT">
+      <column comment="" key="false" length="100" name="a_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="b_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="originating_mdl_location" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="originating_mdl_dial_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="mdl_destination" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="mdl_destination_dial_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="time" nullable="true" pattern="&quot;HH:mm:ss&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="answered_time" nullable="true" pattern="" precision="0" sourceType="FLOAT4" type="id_Float" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="unanswered_time" nullable="true" pattern="" precision="0" sourceType="FLOAT4" type="id_Float" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="call_status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="release_cause" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="a_num_sub" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tSetGlobalVar_1" offsetLabelX="0" offsetLabelY="0" source="tSetGlobalVar_1" target="tDBConnection_1">
@@ -440,6 +729,16 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tDBRow_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk6"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBRow_1" offsetLabelX="0" offsetLabelY="0" source="tDBRow_1" target="tDBInput_4">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk5"/>
+  </connection>
+  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tDBInput_4" offsetLabelX="0" offsetLabelY="0" source="tDBInput_4" target="tDBOutput_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
+  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSetGlobalVar_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
@@ -495,13 +794,18 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5af2ce86-7c45-49de-9e4f-c0a94e066b61"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>02Ki15YoTCBFGRqw4aJrL9xp0vUTnF0csoDBLqhtGXKIKDs9+SQ5W2Nj85EnLsymA+g6tpRu9SG7&#13;
-WSyLWjcDbA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_cc14bd2e-cda7-4d2d-94d6-085c0f1aafff"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>i3j4RevFOyWEZaGupFfJ9aXrBMogw253Jv1JoAcxh+aVlJpdbcKpT6QEgTWlHZ+BF1Jv/YjuqX/p&#13;
-Qju/JsvdOw==</DigestValue></Reference></SignedInfo><SignatureValue>Pw13JGUrTYsZBOBVTQWf4LCSpUBidFdix4HmpYNwCikFVTK6orADOPD9FXlpPaDq7gvD3yqUndSb&#13;
-gHX4GY/oML+Fcf+kyWqy10loxJycmFW7x6OBvXt5JJHuS52oDpq/OwDSvXOsA+djiS9YD4Hylrkw&#13;
-j/SUaLNSslKP9YhiTaXFK/irYGvByqbRlYbu8qnByRczpecNXgn+qDnyGJkXddcztqDulzRsE0aD&#13;
-eEtfIAoOGqiN8J1ERg7PDh9ued36PHsF7MEQJt0yVmPCR3iCJt5JQ+xqChAFmJKOIiigwj4eW4IU&#13;
-FkNB5OCJMEPM0eYZCRyGST64cXRs7Q1ydslLhg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_4"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_a69d2b16-9fbf-4ef5-99a8-9dc65013cc5c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MAMVc79t16taZRUbki/41mJ3oyIuUvVHklt8aaIsS6LpMRI9FAr/MRKot43ZWoSNpdrW9IT+ko97&#13;
+TOMjucnifA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_07f7e172-4ee7-4c77-b853-5c89f6f35b5a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>XSgDcHM5J6gL429aLVRBqAcQN/hn9smRhG2gAb90qtPHajCCUusNSdDf3X8qkA/efERvBqR95o2H&#13;
+NcEbPy6CSA==</DigestValue></Reference></SignedInfo><SignatureValue>m4itRbN2h7XC73TGns6L/1A4bIw6sHCIdA4otTXobQaxfsCNy8UHdTbcPItI/0XXZ91+Es06FAsN&#13;
+GaVJODiRZsBkxv2Yxbqf8IdirePWneTt+rlU15GxbHkVHsiFH1jGpYZSWZKCPraBbURqhLDru5Px&#13;
+A4rjgOI6bYv6oWTWZzMpD6Y9iy18w9daU6BS9FgD5JysbWgYxJpfydJc5t1h76RdRFr/6HU6cLAI&#13;
+ERRxKxxow0/QQq9XfQTX/opzTEcXH7xRysHiKu0xCsHdbVXkF1qSpBVBZmT01PAOe7Z0etYuORvW&#13;
+cya71cg7tqdIseZoWzikvzs0D7pIq9tGIqQ1sQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -523,4 +827,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_cc14bd2e-cda7-4d2d-94d6-085c0f1aafff" Target="#_5af2ce86-7c45-49de-9e4f-c0a94e066b61"><Timestamp>2024-07-08 14:01:28</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_07f7e172-4ee7-4c77-b853-5c89f6f35b5a" Target="#_a69d2b16-9fbf-4ef5-99a8-9dc65013cc5c"><Timestamp>2024-07-09 01:03:54</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
