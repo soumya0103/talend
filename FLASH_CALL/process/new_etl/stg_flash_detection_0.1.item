@@ -10,6 +10,7 @@
     <contextParameter comment="" internalId="_nTtkwD0uEe-34vyz2oirfg" name="BatchProcessTableName" prompt="BatchProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="batch_process"/>
     <contextParameter comment="" internalId="_nTtkwT0uEe-34vyz2oirfg" name="PredecessorName" prompt="PredecessorName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="stg_sbc_ic"/>
     <contextParameter comment="" internalId="_nTtkwj0uEe-34vyz2oirfg" name="ProcessTableName" prompt="ProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="batch_logs"/>
+    <contextParameter comment="" internalId="_SVUOED3EEe-e7JzmRHoQ2w" name="batch_id" prompt="batch_id?" promptNeeded="false" repositoryContextId="built-in" type="id_Integer" value=""/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
@@ -796,47 +797,6 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="0" posY="-120">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_5"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value="tDBConnection_1"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="V9_X"/>
-    <elementParameter field="TEXT" name="HOST" value="context.host"/>
-    <elementParameter field="TEXT" name="TYPE" show="false" value="PostgreSQL"/>
-    <elementParameter field="TEXT" name="PORT" value="context.port"/>
-    <elementParameter field="TEXT" name="DBNAME" value="context.database"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;public&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="context.username"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:cNMEByBOqoANvZxYdbVXKuFJbFIGSdCzWMyKye1ghpzC7EBW/CKHXsELbZw="/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
-    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT  job_status,data_processed FROM &quot; +context.BatchProcessTableName+&#13;&#10;&quot; WHERE process_name='&quot;+context.PredecessorName+&quot;'&quot;"/>
-    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="postgres_id"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="USE_CURSOR" value="false"/>
-    <elementParameter field="TEXT" name="CURSOR_SIZE" show="false" value="1000"/>
-    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
-    <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="job_status"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="data_processed"/>
-      <elementValue elementRef="TRIM" value="false"/>
-    </elementParameter>
-    <elementParameter field="TEXT" name="LABEL" value="predecessor_status"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tDBInput_5">
-      <column comment="" key="false" length="-1" name="job_status" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="CHAR" type="id_Character" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="data_processed" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="CHAR" type="id_Character" usefulColumn="true"/>
-    </metadata>
-  </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tSetGlobalVar_1" offsetLabelX="0" offsetLabelY="0" source="tSetGlobalVar_1" target="tDBConnection_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
   </connection>
@@ -890,7 +850,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row14"/>
   </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tDBInput_3">
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBInput_2" offsetLabelX="-2" offsetLabelY="-6" source="tDBInput_2" target="tDBInput_3">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk4"/>
   </connection>
   <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tJavaRow_3">
@@ -990,18 +950,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_5"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
-  </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_0f053c73-32ca-45b2-aa19-0e4f58c35f5b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>SIhhNe2dKwIQxIPzQd+QRa1kcidvDj3PoRQwoNAkq3yWasrnYt6bhlyikwIiaWBePIh0jT7xkbIn&#13;
-PVuF5dBoIg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3233c10f-dac2-47c7-906f-b37604c8ccef"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>tDKn4pDR1D0BxKOBeq2njJ13Rwwgv+n1VcNO2lNcDVSWYk2AyvR9BDSCq3oKj6rtpLj/M7TGzPdb&#13;
-QP3+O34WhA==</DigestValue></Reference></SignedInfo><SignatureValue>jUwmJufTwRVxXKiljRRjVWM109bexZE3FQ6nkR3JGPTDRtSbM0mUAaWzBkqcXQXTgMQUNHrze7lk&#13;
-CrrbYlCi8UE1ppahr7PMg42cI2Cwz6qs+p4/kTwy9ffZHv9hj1cslY4cL6yc2R5NWfwyxPsec8qv&#13;
-wOyTCHTwGY0iAwkqQAFQPrsOVNqie8UC5Y0sfC0Jtwgh6RyzYfGjK8hBT6wXXsZrtOQt16vo5ECy&#13;
-F6UUIsFn6OflY/9a3GRTTXNrT/4DeMQlUC7iIBAsPz22UUbVgarEH0+1kG/MmElulDWtGeiOutme&#13;
-O77YXBWBi0osDJkRRSYiZpg/GoaSx6zaVQ1j3A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_70292b79-5616-4bf4-bda4-f3281225e0c5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>QtqSw/FdNTl1+BqVol1FhuDG9Q3S/dftC0RtidZwS1+yVYBFJQd9n51x2yInkTeGYyzMYDUSttuH&#13;
+nqTsQVSC+Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_fcadb504-afeb-4325-b139-7157c4537c6f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>SFU80UCnAdYeCdYkkeFe2I9MKKnQT13OYcHFnxpyeK7ySVppBd6Td7skR0VHs4n26fGFLj++3htI&#13;
+S5nouoR4Qg==</DigestValue></Reference></SignedInfo><SignatureValue>nOqGASNICoh98ecSRLUGzEYA+k2QIdtFsJNdAi3VSYoVle4eucSsGSnM8NhvfKsh/MDVHiOmHl8v&#13;
+s4aCLo6/sMLP7LAZX4gsE3exiBr7OJxvU7Jt+VTpDhQcdDP7/Zqm5HY/I5Eo5I2v8KIb13VV1pWS&#13;
+RCjg3MnTW/JljYlwJWx0SZaMpEbbW+gwJDblkKgznlVlETKM5PKrIvBpC+nD3c6V61Ub8PNTGxP4&#13;
+t/Tyge+PmXjsSMJl0U3YPeuQOPJ7ekRit0ZF+bzwyUH30TLB4zdLfFfMzZsSHse5rGP2irXJqysH&#13;
+Zw/b+KIU6cnuMjKSmrA8nel+8Giiwe6tUYZnSA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1023,4 +978,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3233c10f-dac2-47c7-906f-b37604c8ccef" Target="#_0f053c73-32ca-45b2-aa19-0e4f58c35f5b"><Timestamp>2024-07-09 06:19:19</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_fcadb504-afeb-4325-b139-7157c4537c6f" Target="#_70292b79-5616-4bf4-bda4-f3281225e0c5"><Timestamp>2024-07-09 07:27:59</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
