@@ -1,51 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Prod" jobType="Standard" xmi:version="2.0">
-  <context confirmationNeeded="false" name="Default">
-    <contextParameter comment="" internalId="_6w7IwBQYEe-71udyoAn91w" name="ProcessName" prompt="ProcessName?" promptNeeded="false" type="id_String" value="&quot;SMART_REVENUE_FACT_LOAD&quot;"/>
-    <contextParameter comment="" internalId="_6w7IwRQYEe-71udyoAn91w" name="OperatorCode" prompt="OperatorCode?" promptNeeded="false" type="id_String" value="&quot;SM&quot;"/>
-    <contextParameter comment="" internalId="_6w7IwhQYEe-71udyoAn91w" name="FactTableName" prompt="FactTableName?" promptNeeded="false" type="id_String" value="&quot;FT_SM_REVENUE&quot;"/>
-    <contextParameter comment="" internalId="_6w7IwxQYEe-71udyoAn91w" name="StagingTablename" prompt="StagingTablename?" promptNeeded="false" type="id_String" value="&quot;ST_SM_REVENUE&quot;"/>
-    <contextParameter comment="" internalId="_6w7IxBQYEe-71udyoAn91w" name="PredecessorName" prompt="PredecessorName?" promptNeeded="false" type="id_String" value="&quot;SMART_REVENUE_STAGING_LOAD_IN_DATA&quot;"/>
-    <contextParameter comment="" internalId="_6w7IxRQYEe-71udyoAn91w" name="UserName" prompt="UserName?" promptNeeded="false" type="id_String" value="&quot;talend&quot;"/>
-    <contextParameter comment="" internalId="_6w7IxhQYEe-71udyoAn91w" name="TempFolder" prompt="TempFolder?" promptNeeded="false" type="id_String" value="&quot;D:/DMC/Datafiles/Logs/Temp/&quot;"/>
-    <contextParameter comment="" internalId="_6w7IxxQYEe-71udyoAn91w" name="ProcessTableName" prompt="ProcessTableName?" promptNeeded="false" type="id_String" value="&quot;BATCH_LOGS&quot;"/>
-    <contextParameter comment="" internalId="_6w7IyBQYEe-71udyoAn91w" name="BatchProcessTableName" prompt="BatchProcessTableName?" promptNeeded="false" type="id_String" value="&quot;BATCH_PROCESS&quot;"/>
-    <contextParameter comment="" internalId="_6w7IyRQYEe-71udyoAn91w" name="LogFolder" prompt="LogFolder?" promptNeeded="false" type="id_String" value="&quot;D:/DMC/Datafiles/Logs/&quot;"/>
-    <contextParameter comment="" internalId="_6w7IyhQYEe-71udyoAn91w" name="ConfigFileName" prompt="ConfigFileName?" promptNeeded="false" type="id_String" value="&quot;C:/Users/pmsuja/Desktop/db.config&quot;"/>
-    <contextParameter comment="" internalId="_6w7IyxQYEe-71udyoAn91w" name="DB_AdditionalParams" prompt="DB_AdditionalParams?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_6w7IzBQYEe-71udyoAn91w" name="DB_Password" prompt="DB_Password?" promptNeeded="false" type="id_Password" value=""/>
-    <contextParameter comment="" internalId="_6w7IzRQYEe-71udyoAn91w" name="DB_Port" prompt="DB_Port?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_6w7IzhQYEe-71udyoAn91w" name="DB_Schema" prompt="DB_Schema?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_6w7IzxQYEe-71udyoAn91w" name="DB_Server" prompt="DB_Server?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_6w7I0BQYEe-71udyoAn91w" name="DB_Sid" prompt="DB_Sid?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_6w7I0RQYEe-71udyoAn91w" name="DB_Login" prompt="DB_Login?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_6w7I0hQYEe-71udyoAn91w" name="DB_Connection" prompt="DB_Connection?" promptNeeded="false" type="id_String" value="&quot;dbconn&quot;"/>
+  <context confirmationNeeded="false" hide="false" name="Default">
+    <contextParameter comment="" internalId="_6w7IwBQYEe-71udyoAn91w" name="ProcessName" prompt="ProcessName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;SMART_REVENUE_FACT_LOAD&quot;"/>
+    <contextParameter comment="" internalId="_6w7IwRQYEe-71udyoAn91w" name="OperatorCode" prompt="OperatorCode?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;SM&quot;"/>
+    <contextParameter comment="" internalId="_6w7IwhQYEe-71udyoAn91w" name="FactTableName" prompt="FactTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;FT_SM_REVENUE&quot;"/>
+    <contextParameter comment="" internalId="_6w7IwxQYEe-71udyoAn91w" name="StagingTablename" prompt="StagingTablename?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;ST_SM_REVENUE&quot;"/>
+    <contextParameter comment="" internalId="_6w7IxBQYEe-71udyoAn91w" name="PredecessorName" prompt="PredecessorName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;SMART_REVENUE_STAGING_LOAD_IN_DATA&quot;"/>
+    <contextParameter comment="" internalId="_6w7IxRQYEe-71udyoAn91w" name="UserName" prompt="UserName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;talend&quot;"/>
+    <contextParameter comment="" internalId="_6w7IxhQYEe-71udyoAn91w" name="TempFolder" prompt="TempFolder?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;D:/DMC/Datafiles/Logs/Temp/&quot;"/>
+    <contextParameter comment="" internalId="_6w7IxxQYEe-71udyoAn91w" name="ProcessTableName" prompt="ProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;BATCH_LOGS&quot;"/>
+    <contextParameter comment="" internalId="_6w7IyBQYEe-71udyoAn91w" name="BatchProcessTableName" prompt="BatchProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;BATCH_PROCESS&quot;"/>
+    <contextParameter comment="" internalId="_6w7IyRQYEe-71udyoAn91w" name="LogFolder" prompt="LogFolder?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;D:/DMC/Datafiles/Logs/&quot;"/>
+    <contextParameter comment="" internalId="_6w7IyhQYEe-71udyoAn91w" name="ConfigFileName" prompt="ConfigFileName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;C:/Users/pmsuja/Desktop/db.config&quot;"/>
+    <contextParameter comment="" internalId="_6w7IyxQYEe-71udyoAn91w" name="DB_AdditionalParams" prompt="DB_AdditionalParams?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_6w7IzBQYEe-71udyoAn91w" name="DB_Password" prompt="DB_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_6w7IzRQYEe-71udyoAn91w" name="DB_Port" prompt="DB_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_6w7IzhQYEe-71udyoAn91w" name="DB_Schema" prompt="DB_Schema?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_6w7IzxQYEe-71udyoAn91w" name="DB_Server" prompt="DB_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_6w7I0BQYEe-71udyoAn91w" name="DB_Sid" prompt="DB_Sid?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_6w7I0RQYEe-71udyoAn91w" name="DB_Login" prompt="DB_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_6w7I0hQYEe-71udyoAn91w" name="DB_Connection" prompt="DB_Connection?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;dbconn&quot;"/>
+    <contextParameter comment="" internalId="_dT9yQBKpEe-TFe6mftq1rA" name="batch_id" prompt="batch_id?" promptNeeded="false" repositoryContextId="_DJkR8NcEEemBSttP82Vl7w" type="id_String" value=""/>
   </context>
-  <context confirmationNeeded="false" name="Prod">
-    <contextParameter comment="" internalId="_6w7I0xQYEe-71udyoAn91w" name="ProcessName" prompt="ProcessName?" promptNeeded="false" type="id_String" value="&quot;SMART_REVENUE_FACT_LOAD&quot;"/>
-    <contextParameter comment="" internalId="_6w7I1BQYEe-71udyoAn91w" name="OperatorCode" prompt="OperatorCode?" promptNeeded="false" type="id_String" value="&quot;SM&quot;"/>
-    <contextParameter comment="" internalId="_6w7I1RQYEe-71udyoAn91w" name="FactTableName" prompt="FactTableName?" promptNeeded="false" type="id_String" value="&quot;FT_SM_REVENUE_COMMON&quot;"/>
-    <contextParameter comment="" internalId="_6w7I1hQYEe-71udyoAn91w" name="StagingTablename" prompt="StagingTablename?" promptNeeded="false" type="id_String" value="&quot;ST_SM_REVENUE_TYPE1&quot;"/>
-    <contextParameter comment="" internalId="_6w7I1xQYEe-71udyoAn91w" name="PredecessorName" prompt="PredecessorName?" promptNeeded="false" type="id_String" value="&quot;SMART_REVENUE_STAGING_LOAD_IN_CLEARANCE&quot;"/>
-    <contextParameter comment="" internalId="_6w7I2BQYEe-71udyoAn91w" name="UserName" prompt="UserName?" promptNeeded="false" type="id_String" value="&quot;talend&quot;"/>
-    <contextParameter comment="" internalId="_6w7I2RQYEe-71udyoAn91w" name="TempFolder" prompt="TempFolder?" promptNeeded="false" type="id_String" value="&quot;/talend/temp/&quot;"/>
-    <contextParameter comment="" internalId="_6w7I2hQYEe-71udyoAn91w" name="ProcessTableName" prompt="ProcessTableName?" promptNeeded="false" type="id_String" value="&quot;BATCH_LOGS&quot;"/>
-    <contextParameter comment="" internalId="_6w7I2xQYEe-71udyoAn91w" name="BatchProcessTableName" prompt="BatchProcessTableName?" promptNeeded="false" type="id_String" value="&quot;BATCH_PROCESS&quot;"/>
-    <contextParameter comment="" internalId="_6w7I3BQYEe-71udyoAn91w" name="LogFolder" prompt="LogFolder?" promptNeeded="false" type="id_String" value="&quot;/talend/logs/&quot;"/>
-    <contextParameter comment="" internalId="_6w7I3RQYEe-71udyoAn91w" name="ConfigFileName" prompt="ConfigFileName?" promptNeeded="false" type="id_String" value="&quot;//talend/config/db.config&quot;"/>
-    <contextParameter comment="" internalId="_6w7I3hQYEe-71udyoAn91w" name="DB_AdditionalParams" prompt="DB_AdditionalParams?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_6w7I3xQYEe-71udyoAn91w" name="DB_Password" prompt="DB_Password?" promptNeeded="false" type="id_Password" value=""/>
-    <contextParameter comment="" internalId="_6w7I4BQYEe-71udyoAn91w" name="DB_Port" prompt="DB_Port?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_6w7I4RQYEe-71udyoAn91w" name="DB_Schema" prompt="DB_Schema?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_6w7I4hQYEe-71udyoAn91w" name="DB_Server" prompt="DB_Server?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_6w7I4xQYEe-71udyoAn91w" name="DB_Sid" prompt="DB_Sid?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_6w7I5BQYEe-71udyoAn91w" name="DB_Login" prompt="DB_Login?" promptNeeded="false" type="id_String" value=""/>
-    <contextParameter comment="" internalId="_6w7I5RQYEe-71udyoAn91w" name="DB_Connection" prompt="DB_Connection?" promptNeeded="false" type="id_String" value="&quot;dbconn&quot;"/>
+  <context confirmationNeeded="false" hide="false" name="Prod">
+    <contextParameter comment="" internalId="_6w7I0xQYEe-71udyoAn91w" name="ProcessName" prompt="ProcessName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;SMART_REVENUE_FACT_LOAD&quot;"/>
+    <contextParameter comment="" internalId="_6w7I1BQYEe-71udyoAn91w" name="OperatorCode" prompt="OperatorCode?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;SM&quot;"/>
+    <contextParameter comment="" internalId="_6w7I1RQYEe-71udyoAn91w" name="FactTableName" prompt="FactTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;FT_SM_REVENUE_COMMON&quot;"/>
+    <contextParameter comment="" internalId="_6w7I1hQYEe-71udyoAn91w" name="StagingTablename" prompt="StagingTablename?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;ST_SM_REVENUE_TYPE1&quot;"/>
+    <contextParameter comment="" internalId="_6w7I1xQYEe-71udyoAn91w" name="PredecessorName" prompt="PredecessorName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;SMART_REVENUE_STAGING_LOAD_IN_CLEARANCE&quot;"/>
+    <contextParameter comment="" internalId="_6w7I2BQYEe-71udyoAn91w" name="UserName" prompt="UserName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;talend&quot;"/>
+    <contextParameter comment="" internalId="_6w7I2RQYEe-71udyoAn91w" name="TempFolder" prompt="TempFolder?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;/talend/temp/&quot;"/>
+    <contextParameter comment="" internalId="_6w7I2hQYEe-71udyoAn91w" name="ProcessTableName" prompt="ProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;BATCH_LOGS&quot;"/>
+    <contextParameter comment="" internalId="_6w7I2xQYEe-71udyoAn91w" name="BatchProcessTableName" prompt="BatchProcessTableName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;BATCH_PROCESS&quot;"/>
+    <contextParameter comment="" internalId="_6w7I3BQYEe-71udyoAn91w" name="LogFolder" prompt="LogFolder?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;/talend/logs/&quot;"/>
+    <contextParameter comment="" internalId="_6w7I3RQYEe-71udyoAn91w" name="ConfigFileName" prompt="ConfigFileName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;//talend/config/db.config&quot;"/>
+    <contextParameter comment="" internalId="_6w7I3hQYEe-71udyoAn91w" name="DB_AdditionalParams" prompt="DB_AdditionalParams?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_6w7I3xQYEe-71udyoAn91w" name="DB_Password" prompt="DB_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_6w7I4BQYEe-71udyoAn91w" name="DB_Port" prompt="DB_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_6w7I4RQYEe-71udyoAn91w" name="DB_Schema" prompt="DB_Schema?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_6w7I4hQYEe-71udyoAn91w" name="DB_Server" prompt="DB_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_6w7I4xQYEe-71udyoAn91w" name="DB_Sid" prompt="DB_Sid?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_6w7I5BQYEe-71udyoAn91w" name="DB_Login" prompt="DB_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_6w7I5RQYEe-71udyoAn91w" name="DB_Connection" prompt="DB_Connection?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;dbconn&quot;"/>
+    <contextParameter comment="" internalId="_dT9yQRKpEe-TFe6mftq1rA" name="batch_id" prompt="batch_id?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
   </context>
   <parameters>
+    <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
     <elementParameter field="TEXT" name="JOB_RUN_VM_ARGUMENTS" show="false" value="{&quot;JOB_RUN_VM_ARGUMENTS&quot;:[&quot;-Xms2056M&quot;,&quot;-Xmx8208M&quot;]}"/>
     <elementParameter field="CHECK" name="JOB_RUN_VM_ARGUMENTS_OPTION" show="false" value="true"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="32"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="40"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" show="false" value=""/>
@@ -70,6 +73,9 @@
     <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
     <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="OVERRIDE_ENCODING_FLAG" show="false" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="OVERRIDE_ENCODING_IN_EXTRA" show="false" value="ISO-8859-15"/>
+    <elementParameter field="TECHNICAL" name="OVERRIDE_ENCODING_IN_EXTRA:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
     <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" show="false" value=""/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" show="false" value=""/>
     <elementParameter field="TEXT" name="URL_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -82,7 +88,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:Rwrp+wH6LFZy7lyG7yHlaBzCPVMnZW9+UliekIr6"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:SbQ5U01a7RJzG2Ee59TybfZimJpR2KP04KSXWUtN"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -97,7 +103,7 @@
     <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
     <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" show="false" value="false"/>
     <elementParameter field="CHECK" name="ON_FILES_FLAG" show="false" value="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;C:/Program Files (x86)/Talend-Studio/studio/workspace/.metadata&quot;"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;C:/Users/Soumya C/Downloads/Talend-Studio-20240527_1700-V8.0.1/Talend-Studio-20240527_1700-V8.0.1/workspace/.metadata&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
@@ -117,7 +123,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:CZERQcs+Ov6BSV+gpBl1PiFRf8QHHx6pwemcPq2h"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:PaXEo/y6cDUV8Pyz6ecAXzdXPXPkWAH2OaxRzFth"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
@@ -136,21 +142,6 @@
     <elementParameter field="TEXT" name="FOOTER_LIBRARY" show="false" value=""/>
     <elementParameter field="TEXT" name="FOOTER_CODE" show="false" value=""/>
     <elementParameter field="TEXT" name="FOOTER_IMPORT" show="false" value=""/>
-    <routinesParameter id="_lidngGquEeqpetDbjJ1-fQ" name="DataOperation"/>
-    <routinesParameter id="_li2CAGquEeqpetDbjJ1-fQ" name="Numeric"/>
-    <routinesParameter id="_liQzMGquEeqpetDbjJ1-fQ" name="SQLike"/>
-    <routinesParameter id="_lje7MGquEeqpetDbjJ1-fQ" name="TalendDataGenerator"/>
-    <routinesParameter id="_ljEEcGquEeqpetDbjJ1-fQ" name="Relational"/>
-    <routinesParameter id="_linYgGquEeqpetDbjJ1-fQ" name="Mathematical"/>
-    <routinesParameter id="_ljRf0GquEeqpetDbjJ1-fQ" name="StringHandling"/>
-    <routinesParameter id="_lgVgkGquEeqpetDbjJ1-fQ" name="DataMasking"/>
-    <routinesParameter id="_llHS4GquEeqpetDbjJ1-fQ" name="TalendStringUtil"/>
-    <routinesParameter id="_lh0uUGquEeqpetDbjJ1-fQ" name="DqStringHandling"/>
-    <routinesParameter id="_liCwwGquEeqpetDbjJ1-fQ" name="DQTechnical"/>
-    <routinesParameter id="_lj5x8GquEeqpetDbjJ1-fQ" name="TalendString"/>
-    <routinesParameter id="_lhZ3kGquEeqpetDbjJ1-fQ" name="DataQuality"/>
-    <routinesParameter id="_lhmr4GquEeqpetDbjJ1-fQ" name="DataQualityDependencies"/>
-    <routinesParameter id="_ljsWkGquEeqpetDbjJ1-fQ" name="TalendDate"/>
   </parameters>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="5" offsetLabelY="-1" posX="128" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_1"/>
@@ -160,7 +151,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_1"/>
   </node>
-  <node componentName="tLogCatcher" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="608">
+  <node componentName="tLogCatcher" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="80" posY="808">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogCatcher_1"/>
     <elementParameter field="CHECK" name="CATCH_JAVA_EXCEPTION" value="true"/>
     <elementParameter field="CHECK" name="CATCH_TDIE" value="true"/>
@@ -183,7 +174,7 @@
       <column defaultValue="" key="false" length="3" name="code" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="608">
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="272" posY="808">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_1"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
@@ -229,12 +220,14 @@
       <column defaultValue="" key="false" length="3" name="code" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tPrejob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="96">
+  <node componentName="tPrejob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="16">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
   <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_1"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_DYNAMIC" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="DYNAMIC" show="false" value=""/>
     <elementParameter field="LABEL" name="FILENAMETEXT" value="&quot;When the input source is a stream or a zip file,footer and random shouldn't be bigger than 0.&quot;"/>
     <elementParameter field="FILE" name="FILENAME" value="context.ConfigFileName"/>
     <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
@@ -275,6 +268,7 @@
       <elementValue elementRef="DECODE" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="DESTINATION" show="false" value=""/>
+    <elementParameter field="CHECK" name="USE_HEADER_AS_IS" value="false"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="LABEL" value="Read ConfigFile"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -371,6 +365,7 @@
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:thin:USER/MDP@server&quot;"/>
     <elementParameter field="CHECK" name="AUTO_COMMIT" value="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NLS" value="false"/>
     <elementParameter field="TEXT" name="LABEL" value="DBConnect"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
@@ -431,6 +426,15 @@
     <elementParameter field="CHECK" name="PROPAGATE_CHILD_RESULT" value="false"/>
     <elementParameter field="CHECK" name="PRINT_PARAMETER" value="false"/>
     <elementParameter field="CHECK" name="TRANSMIT_ORIGINAL_CONTEXT" show="false" value="true"/>
+    <elementParameter field="RADIO" name="USE_CHILD_JVM_SETTING" show="false" value="true"/>
+    <elementParameter field="RADIO" name="USE_CUSTOM_JVM_SETTING" show="false" value="false"/>
+    <elementParameter field="TABLE" name="JVM_ARGUMENTS" show="false"/>
+    <elementParameter field="CHECK" name="USE_DYNAMIC_CONTEXT" value="false"/>
+    <elementParameter field="TEXT" name="DYNAMIC_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="USE_EXTRA_CLASSPATH" show="false" value="false"/>
+    <elementParameter field="TEXT" name="EXTRA_CLASSPATH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="LOAD_CONTEXT_FROM_FILE" show="false" value="false"/>
+    <elementParameter field="CHECK" name="USE_BASE64" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tRunJob_1"/>
   </node>
@@ -466,17 +470,17 @@
     <elementParameter field="CHECK" name="INFORMATION" value="false"/>
     <elementParameter field="MEMO" name="COMMENT" value=""/>
   </node>
-  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="960" posY="352">
+  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="960" posY="592">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_1"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tOracleClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="960" posY="480">
+  <node componentName="tOracleClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="960" posY="800">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_1"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
     <elementParameter field="TEXT" name="LABEL" value="CloseDB"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="384">
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="88" posY="584">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_1"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -499,7 +503,7 @@
       <column comment="" key="false" length="1" name="DATA_PROCESSED" nullable="true" pattern="" precision="-1" sourceType="" type="id_Character" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="384">
+  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="280" posY="584">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
@@ -526,6 +530,8 @@
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="TEXT" name="PROPERTIES" show="false" value="context.prod_db_conn_AdditionalParams"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
+    <elementParameter field="CHECK" name="USE_ALTERNATE_SCHEMA" value="false"/>
+    <elementParameter field="TEXT" name="ALTERNATE_SCHEMA" show="false" value="&quot;&quot;"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="TEXT" name="COMMIT_EVERY" show="false" value="1"/>
@@ -546,6 +552,7 @@
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="false"/>
+    <elementParameter field="CHECK" name="CONTAIN_BLOB_FROM_OTHER_DB" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" show="false" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" value="false"/>
@@ -553,6 +560,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
     <elementParameter field="CHECK" name="USE_TIMESTAMP_FOR_DATE_TYPE" value="true"/>
     <elementParameter field="CHECK" name="TRIM_CHAR" value="true"/>
+    <elementParameter field="CHECK" name="SUPPORT_NLS" show="false" value="false"/>
     <elementParameter field="TEXT" name="LABEL" value="Batch Process Update"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row1"/>
     <metadata connector="FLOW" name="tDBOutput_1">
@@ -604,7 +612,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
-  <note opaque="true" posX="608" posY="-32" sizeHeight="97" sizeWidth="385" text="Prejob does the below&#13;&#10;&#13;&#10;1. Establish database connection&#13;&#10;2. Write an entry to process log table with auto-gnerated BatchID&#13;&#10;3. Set global Variables">
+  <note opaque="true" posX="1240" posY="40" sizeHeight="97" sizeWidth="385" text="Prejob does the below&#13;&#10;&#13;&#10;1. Establish database connection&#13;&#10;2. Write an entry to process log table with auto-gnerated BatchID&#13;&#10;3. Set global Variables">
     <elementParameter field="RADIO" name="NOTETXT_LEFT" value="true"/>
     <elementParameter field="RADIO" name="NOTETXT_CENTER" value="false"/>
     <elementParameter field="TEXT" name="NOTE_FONT" value="Calibri"/>
@@ -616,73 +624,73 @@
   </note>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogCatcher_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Pre_Job_Joblet_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Success_Joblet_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Failure_Joblet_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_710fab4c-bf8d-440b-a6bb-adedf147ac2e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jgqUm/EaiabHE4RTxIbjooPxcbsdkvjnaJK7bnGNAuoVCDLTo2HV4Mw5Bv6WHmTxgngEfolD88Nn&#13;
-kCsmSJxLOQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_9234aa1b-4e6c-4f88-b2cc-a1b153f04de2"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4OSwhWLwVbJk/Uni87uVVMHJgYYGEC6uMUs34R1e4EO6VkJznbYeoFhjIrV/dVi90eNMn7Qhsf5W&#13;
-zsYKPsgZgg==</DigestValue></Reference></SignedInfo><SignatureValue>oQiOpLuetjkdXC32wl1t8yiot4fS+RJO8ABShOF+eAvUvUjJSwQvuw2frjixyKovlxpteCft1iWU&#13;
-XPt8KMWtKIEEin5h0z8u57D0QyQDk90lAVLUwiH8MTK7C95DJrjCbvZFfE5hFwSKTt4F0CC31ykX&#13;
-zs63B3tXr4vpfSFn10yDFQBU72Fbw80TZ1rdbSahNrKbD4JLz0RBUU2Oag5g+Fmc82U/KVExu/0O&#13;
-bAKmKqnKgH69Zkp2vAFco2mZIGN/6Bb6x1R0pZ087zbY1ZuMlhfDI23m0GB4wL+gVIA1+Hl+R21U&#13;
-KjVrZuuv+iTa8r8F+b48EWtHcbWkFywtMSY3JA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c3b704c8-fd20-48ba-bd1d-edf8d95b2131"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>or+SMH3w/lg3Y/Um0dTfpM2/+k9BzYg4FjFSmSdDW2rxXi12kc8ZeannkKXsinjWdyVIn/mdtWGU&#13;
+1ryzXn1Nkg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_50bb9d5c-8ad2-4c97-9633-2505c085f62a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>TbnePxehJfzo7nHXryibKFrDsKeFwcM2rNQVKsY8sIJhtgJdjwCKIwtW3Imp+fPCCHQgRoq6RFBb&#13;
+DZEmL50jjw==</DigestValue></Reference></SignedInfo><SignatureValue>Ts0Pja/6u5t38GT7hfRsRKrgdcJPLXk0jTSorQbp3P/M530a3aIZs6mlk7XV591ALh00Zv9NWMO7&#13;
+WkDDFg3H1+hoo3Cp2feVBPe6MLi/eFCxf2xHDInGHOxyDfkV93ngVyA2k1jufgPBTgcodD83ofVE&#13;
+22URQF1I91aVqOMIj3IKfNAIMNgx+mL0gKbap1K8/7U5N+VXrYNIC3hdsG1rdfCo4hyKNQP5VrcA&#13;
+J2bNaXQtHFgRJ9OTs4TdfWlFuPsuK/Qma40CVeXBzqYHaNCYs1Iz5O1xUUt4hDGoYduAP4ZfUK/t&#13;
+wUfAyH863WNanUZzFmARZTyc5Q6p6DQmosMy7g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -704,4 +712,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_9234aa1b-4e6c-4f88-b2cc-a1b153f04de2" Target="#_710fab4c-bf8d-440b-a6bb-adedf147ac2e"><Timestamp>2024-05-17 06:44:32</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_50bb9d5c-8ad2-4c97-9633-2505c085f62a" Target="#_c3b704c8-fd20-48ba-bd1d-edf8d95b2131"><Timestamp>2024-07-09 06:19:15</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
